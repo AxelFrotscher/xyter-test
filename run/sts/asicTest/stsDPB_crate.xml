@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<connections>
+	<connection id="eDPB_A" uri="chtcp-2.0://localhost:10203?target=10.203.175.115:50001" address_table="file://../../../cfg/ipbus_address_eDPB.xml" />
+<!--
+	<connection id="tDPB"   uri="chtcp-2.0://localhost:10203?target=10.203.175.102:50001" address_table="file://../../../cfg/ipbus_address_TS_gm_pulser.xml" />
+	<connection id="eDPB_B" uri="chtcp-2.0://localhost:10203?target=10.203.175.114:50001" address_table="file://../../cfg/ipbus_address_eDPB.xml" />
+-->
+</connections>

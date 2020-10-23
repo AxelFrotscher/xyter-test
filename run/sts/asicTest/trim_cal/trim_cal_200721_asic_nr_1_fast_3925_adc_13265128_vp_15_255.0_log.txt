@@ -1,0 +1,7 @@
+ -------------------------- TIME SUMMARY ------------------------------ 
+Starting time_ADC_calib: 1595339227.49
+Ending time_ADC_calib: 1595339891.73
+Duration time_ADC: 664.240417004
+Starting time_FAST_calib: 1595339891.73
+Ending time_FAST_calib: 1595339891.73
+Duration time_FAST: 8.82148742676e-06
