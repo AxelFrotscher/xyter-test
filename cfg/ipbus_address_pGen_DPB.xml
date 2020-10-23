@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<node id="top">
+    <node id="global_dev" module="file://./dev/global_dev.xml" address="0x00000000" tags="slave"/>
+    <node id="pGen_dev" module="file://./dev/pGen_dev.xml" address="0x40000000" tags="slave"/>
+    <node id="ts_dev" module="file://./dev/ts_dev.xml" address="0x80000000" tags="slave"/>
+    <node id="flim_ctrl_dev" module="file://./dev/flim_ctrl_dev.xml" address="0xC0000000" tags="slave"/>
+</node>
+

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<node id="TOP">
+    <node id="STAT" address="0x00000000" permission="r" mode="single" description="Status register" fwinfo="endpoint;width=0">
+        <node id="SYSCLK_LOCKED" mask="0x00000001" description="125 MHz system-clock locked" />
+        <node id="IPBUS_PMA_LOCKED" mask="0x00000002" description="IPbus PMA locked" />
+        <node id="IPBUS_PMA_LINK_UP" mask="0x00000004" description="IPbus PMA link-up" />
+        <node id="IPB_RST" mask="0x00000008" description="IPbus reset active" />
+        <node id="I2C_CONFIG_DONE" mask="0x00000010" description="Initial I2C config done" />
+        <node id="FLIM_CLK_NOT_LOCKED" mask="0x00000020" description="FLIM clock not locked" />
+        <node id="FLIM_CHANNEL_UP" mask="0x00000040" description="FLIM channel-up" />
+        <node id="FLIM_READY" mask="0x00000080" description="FLIM ready for data" />
+        <node id="CLK_40_TS_RST" mask="0x00000100" description="TS-clock reset active" />
+        <node id="UDP_PMA_MMCM_LOCKED" mask="0x00000200" description="UDP-output PMA locked" />
+        <node id="UDP_PMA_LINK_UP" mask="0x00000400" description="UDP-output link-up" />
+    </node>
+
+    <node id="CTRL" address="0x00000002" permission="rw" mode="single" description="Control register" fwinfo="endpoint;width=0">
+        <node id="TS_GM_REFCLK_SEL" mask="0x00000001" description="TS GM clock-reference selection (0: local; 1: external)" />
+        <node id="PULSE_OUT_RJ45_EN" mask="0x00000002" description="Enable output of microslice pulse on RJ45 FMC 4 DC-" />
+        <node id="RESET_TIME" mask="0x00000004" description="Reset timer for trigger-pulse generation" />
+        <node id="PREP_TIMERS" mask="0x00000008" description="Prepare timer for initialization at next PPS" />
+    </node>
+
+    <node id="DELAY" address="0x00000003" permission="rw" mode="single" description="Trigger delay in [25 ns]" fwinfo="endpoint;width=0">
+    </node>
+</node>

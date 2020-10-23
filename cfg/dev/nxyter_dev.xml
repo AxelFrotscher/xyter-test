@@ -1,0 +1,22 @@
+<node id="nxyter_dev">
+    <node id="DEV_TYPE"     address="0x0000000" mask="0x000000ff" permission="r" />
+    <node id="FW_VER"       address="0x0000000" mask="0x0000ff00" permission="r" />
+    <node id="FMC0_SPT_DEV" address="0x0000000" mask="0x00ff0000" permission="r" />
+    <node id="FMC1_SPT_DEV" address="0x0000000" mask="0xff000000" permission="r" />
+    <node id="STAT_REG_NUM" address="0x0000001" mask="0x000000ff" permission="r" />
+    <node id="CTRL_REG_NUM" address="0x0000001" mask="0x0000ff00" permission="r" />
+    <node id="OTH_SLV_NUM"  address="0x0000001" mask="0x000f0000" permission="r" />
+    <node id="SLV_MASK"     address="0x0000001" mask="0xfff00000" permission="r" />
+    <node id="DEV_TEST_R"   address="0x0000002" mask="0xffffffff" permission="r" />
+    <node id="PPS_TO_NOW"   address="0x0000003" mask="0xffffffff" permission="r" />
+    <node id="SYNC_DONE"    address="0x0000004" mask="0x00000001" permission="r" />
+    <node id="DEV_TEST_W"   address="0x0000008" mask="0xffffffff" permission="wr" />
+    <node id="DATA_SOURCE"  address="0x0000009" mask="0x00000001" permission="wr"/>
+    <node id="DATA_DEST"    address="0x0000009" mask="0x00000002" permission="wr"/>
+    <node id="SYNC_ENA"     address="0x0000009" mask="0x00000004" permission="wr"/>
+    <node id="NXYTER_SEL"   address="0x0000009" mask="0x00000018" permission="wr"/>
+    <node id="PGEN_THROTTLE" address="0x0000009" mask="0xffff0000" permission="wr"/>
+    <node id="DATA_FIFO" module="file://../slave/rfifo.xml"   address="0x0000010" tags="slave"/>
+    <node id="NXYTER" module="file://../slave/nxyter.xml" address="0x1000000" tags="slave"/>
+</node>
+

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<node>
+  <node id="ctrl_rst_reg" 				address="0x0000" permission="rw" mode="single" description="Resets for TS system and clk" fwinfo="endpoint;width=0"/>
+  
+  <node id="ctrl_pps_reg" 				address="0x0001" permission="rw" mode="single" description="Start/Halt/extNintpps/EventListen" fwinfo="endpoint;width=0"/>
+  
+  <node id="ctrl_pps_secData_reg" 		address="0x0002" permission="rw" mode="single" description="Set Second counter to a Value" fwinfo="endpoint;width=0"/>
+  
+  <node id="ctrl_pps_idelVal_i_reg" 	address="0x0003" permission="rw" mode="single" description="Set IDELAY value (very small effect)" fwinfo="endpoint;width=0"/>
+  
+  <node id="ctrl_clk_addPhase_reg" 		address="0x0004" permission="rw" mode="single" description="Additive Phase shift of clock (with incNdec bit)" fwinfo="endpoint;width=0"/>
+  
+  <node id="ctrl_clk_absPhase_reg" 		address="0x0005" permission="rw" mode="single" description="Shift clock to absolute phase value (at 1200MHz VCO frequ, 0d1680 steps=14.88ps at 40MHz)" fwinfo="endpoint;width=0"/>
+  
+  <node id="ctrl_pps_cmpVal_reg" 		address="0x0006" permission="rw" mode="single" description="PPS_i ISERDES uses input if cmpVal is met by ISERDES (expected Phase relation to clock)" fwinfo="endpoint;width=0"/>
+  
+  <node id="ctrl_pps_delay_reg"	 		address="0x0007" permission="rw" mode="single" description="Configurable delay of triggered input pps signal before being passed to pps handling core pps_gen" fwinfo="endpoint;width=0"/>
+  
+  
+  <node id="stat_pps_clk_op_reg" 		address="0x0008" permission="r" mode="single" description="General status bits of pps and phase shifting FSM" fwinfo="endpoint;width=0">
+		<node id="running_bit" mask="0x00000001" description="'1' if PPS and counters are active" />
+		<node id="clk_ps_busy" mask="0x00000002" description="'1' if CLK phase shifting FSM is busy" />
+  </node> 
+  
+  <node id="stat_pps_subsec_reg" 		address="0x0009" permission="r" mode="single" description="Subsecond counter of PPS" fwinfo="endpoint;width=0"/>
+  
+  <node id="stat_pps_sec_reg" 			address="0x000A" permission="r" mode="single" description="Second counter of PPS" fwinfo="endpoint;width=0"/>
+  
+  <node id="stat_pps_idelVal_o_reg" 	address="0x000B" permission="r" mode="single" description="Output IDEL value of IDELAY component (active value)" fwinfo="endpoint;width=0"/>
+  
+  <node id="stat_pps_ISERDES_samp_reg" 	address="0x000C" permission="r" mode="single" description="Non-zero value which has been sampled last time by ISERDES compoment (when sampled value was zero in previous clock cycle)" fwinfo="endpoint;width=0"/>
+  
+  <node id="stat_NODETYPE"			 	address="0x000F" permission="r" mode="single" description="Node Type of the Timing Synchronizer Core: '00' = Grandmaster, '01' = Submaster, '10' = Slave"  fwinfo="endpoint;width=0"/>
+</node>

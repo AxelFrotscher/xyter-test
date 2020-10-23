@@ -1,0 +1,8 @@
+<node id="i2c_ctrl">
+    <node id="prer_lo" address="0x0" mask="0x000000ff" permission="rw" />
+    <node id="prer_hi" address="0x1" mask="0x000000ff" permission="rw" />
+    <node id="control" address="0x2" mask="0x000000ff" permission="rw" />
+    <node id="txr_rxr" address="0x3" mask="0x000000ff" permission="rw" />
+    <node id="cr_sr" address="0x4" mask="0x000000ff" permission="rw" />
+    <node id="i2c_sel" address="0x7" mask="0x0000000f" permission="rw" />
+</node>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<node>
+  
+  <node id="STAT_DEV_INFO" address="0x0000000" permission="r" mode="single" description="General Device Information" fwinfo="endpoint;width=0">
+	  <node id="SLV_TYPE"     mask="0x000000ff"/>
+	  <node id="FW_VER"       mask="0x0000ff00"/>
+	  <node id="FMC0_SPT_DEV" mask="0x00ff0000"/>
+	  <node id="FMC1_SPT_DEV" mask="0xff000000"/>
+  </node> 
+  <node id="STAT_SLV_INFO_ADDR" address="0x0000001" permission="r" mode="single" description="General Slave Information" fwinfo="endpoint;width=0">
+	  <node id="STAT_REG_NUM" mask="0x000000ff"/>
+	  <node id="CTRL_REG_NUM" mask="0x0000ff00"/>
+	  <node id="OTH_SLV_NUM"  mask="0x000f0000"/>
+	  <node id="SLV_MASK"     mask="0xfff00000"/>
+  </node> 
+  <node id="TS_NODETYPE"  address="0x0000002" permission="r" mode="single" description="Node Type of the Timing Synchronizer Core: '00' = Grandmaster, '01' = Submaster, '10' = Slave"  fwinfo="endpoint;width=0"/>
+  
+  <node id="stat_pps_clk_op" 		address="0x0003" permission="r" mode="single" description="General status bits of pps and phase shifting FSM" fwinfo="endpoint;width=0">
+		<node id="running_bit" 				mask="0x00000001" description="'1' if PPS and counters are active" />
+		<node id="clk_ps_busy" 				mask="0x00000002" description="'1' if CLK phase shifting FSM is busy" />
+		<node id="pps_i_activity" 			mask="0x00000004" description="'1' if pps input signal was active since the last second (can only be '1' if using the pps_i mode)" />
+		<node id="pps_event_past_cycles" 	mask="0xFFFFFFF0" description="Indicates the number of cycles since the last 'true' event condition was detected on the event input - ONLY available at the TS Masters!" />
+  </node> 
+  <node id="stat_pps_subsec" 			address="0x0004" permission="r" mode="single" description="Subsecond counter of PPS" fwinfo="endpoint;width=0"/>
+  <node id="stat_pps_sec" 				address="0x0005" permission="r" mode="single" description="Second counter of PPS" fwinfo="endpoint;width=0"/>
+  <node id="stat_pps_idelVal_o" 		address="0x0006" permission="r" mode="single" description="Output IDEL value of IDELAY component (active value)" fwinfo="endpoint;width=0"/>
+  <node id="stat_pps_ISERDES_samp" 		address="0x0007" permission="r" mode="single" description="Non-zero value which has been sampled last time by ISERDES compoment (when sampled value was zero in previous clock cycle)" fwinfo="endpoint;width=0"/>
+  <node id="ts_flesnet_ns_cnt_low" 		address="0x0008" permission="r" mode="single" description="Lower part of the 64 Bit FLESNET counter (ns granularity) - IMPORTANT: FIRST read this register (...then the upper part -> it is a shadow register)" fwinfo="endpoint;width=0"/>
+  <node id="ts_flesnet_ns_cnt_high"		address="0x0009" permission="r" mode="single" description="Upper part of the 64 Bit FLESNET counter (ns granularity)" fwinfo="endpoint;width=0"/>
+  <node id="ctrl_rst" 					address="0x0010" permission="rw" mode="single" description="Resets for TS system and clk" fwinfo="endpoint;width=0">
+    <node id="rst_ts"             mask="0x01"     description ="reset logic of TS core" />
+    <node id="rst_clk"            mask="0x02"     description ="reset clock of TS core" />
+    <node id="clk_sel_force(0)"   mask="0x04"     description ="Select local ('1') or external ('0') clock source - Requires clkForce Bit to be '1'"/>
+    <node id="clk_sel_force(1)"   mask="0x08"     description ="clkForce Bit - Force using a specific clock source ('1') or allow autoselection by the core between local/external clock (startup/Fall-back = local, if external is stable - switches to external; in case of a stopped external clock - switches to local)"/>
+  </node>
+  <node id="ctrl_pps"           address="0x0011" permission="rw" mode="single" description="Start/Halt/extNintpps/EventListen" fwinfo="endpoint;width=0">
+    <node id="pps_halt"           mask="0x01"     description ="For locally generated PPS - HALT the PPS - Starting the PPS again only resets the subsecond counters!" />
+    <node id="pps_start"          mask="0x02"     description ="For locally generated PPS - START the PPS" />
+    <node id="pps_ext_Nint"       mask="0x04"     description ="Select local PPS generation ('0') or using an input PPS signal as reference ('1')"/>
+    <node id="pps_event_listen"   mask="0x08"     description ="Allows starting the PPS generator on the occurence of an external event (works independent from pps_ext_Nint)"/>
+  </node>
+  <node id="ctrl_pps_secData"       address="0x0012" permission="rw" mode="single" description="Set Second counter to a Value" fwinfo="endpoint;width=0"/>
+  <node id="ctrl_pps_idelVal_i"     address="0x0013" permission="rw" mode="single" description="Set IDELAY value (very small effect)" fwinfo="endpoint;width=0"/>
+  <node id="ctrl_clk_addPhase"      address="0x0014" permission="rw" mode="single" description="Additive Phase shift of clock (with incNdec bit)" fwinfo="endpoint;width=0">
+    <node id="counts"           mask="0x07ff"     description ="Desired counts to fine phase shift the MMCM output clock" />
+    <node id="INC_nDEC"           mask="0x0800"     description ="Select to increase ('1') or decrease ('0') the current phase by the input counts" />
+  </node>
+  <node id="ctrl_clk_absPhase"      address="0x0015" permission="rw" mode="single" description="Shift clock to absolute phase value (at 1200MHz VCO frequ, 0d1680 steps=14.88ps at 40MHz)" fwinfo="endpoint;width=0"/>
+  <node id="ctrl_pps_cmpVal"      address="0x0016" permission="rw" mode="single" description="PPS_i ISERDES uses input if cmpVal is met by ISERDES (expected Phase relation to clock)" fwinfo="endpoint;width=0"/>
+  <node id="ctrl_pps_delay"       address="0x0017" permission="rw" mode="single" description="Configurable delay of triggered input pps signal before being passed to pps handling core pps_gen" fwinfo="endpoint;width=0"/>
+  <node id="ts_flesnet_ns_cnt_low_set"  address="0x0018" permission="rw" mode="single" description="Sets Lower part of the 64 Bit FLESNET counter (ns granularity) - IMPORTANT: FIRST write this register (...then the upper part -> the lower part is storted in a shadow register)" fwinfo="endpoint;width=0"/>
+  <node id="ts_flesnet_ns_cnt_high_set" address="0x0019" permission="rw" mode="single" description="Sets Upper part of the 64 Bit FLESNET counter (ns granularity)" fwinfo="endpoint;width=0"/>
+  <node id="ts_sync_data"         address="0x001A" permission="rw" mode="single" description="On occurence of a pulse-per-request signal, this data vector is evaluated, allowing the synchronous execution of IPBus commands" fwinfo="endpoint;width=0"/>
+</node>

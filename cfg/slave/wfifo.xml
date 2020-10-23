@@ -1,0 +1,5 @@
+<node id="wfifo">
+    <node id="WFIFO_DATA" address="0x0" mode="non-incremental" permission="w" />
+    <node id="WFIFO_LEN"  address="0x1" permission="r" />
+    <node id="WVALID_LEN" address="0x2" permission="r"/>
+</node>

@@ -1,0 +1,45 @@
+<node id="WR_dev">
+    <node id="i2c_control_source"         address="0x0000000" mask="0x00000001" permission="rw" />
+    <node id="reset_clocking"             address="0x0000000" mask="0x00000002" permission="rw" />
+
+    <node id="helper_target_frequency"    address="0x0000001" mask="0xffffffff" permission="rw" />
+    <node id="helper_kp"                  address="0x0000002" mask="0xffffffff" permission="rw" />
+    <node id="helper_ki"                  address="0x0000003" mask="0xffffffff" permission="rw" />
+    <node id="tuning_dir"                 address="0x0000004" mask="0x00000001" permission="rw" />
+    <node id="lock_cond"                  address="0x0000004" mask="0x0000000E" permission="rw" />
+    <node id="tuning_disable"             address="0x0000004" mask="0x00000010" permission="rw" />
+    <node id="lock_thd"                   address="0x0000004" mask="0x00FF0000" permission="rw" />
+    <node id="ulock_thd"                  address="0x0000004" mask="0xFF000000" permission="rw" />
+    <node id="main_target_frequency"      address="0x0000005" mask="0xffffffff" permission="rw" />
+    <node id="main_freq_kp"               address="0x0000006" mask="0xffffffff" permission="rw" />
+    <node id="main_freq_ki"               address="0x0000007" mask="0xffffffff" permission="rw" />
+    <node id="main_phase_kp"              address="0x0000008" mask="0xffffffff" permission="rw" />
+    <node id="main_phase_ki"              address="0x0000009" mask="0xffffffff" permission="rw" />
+    <node id="main_phase_trim"            address="0x000000A" mask="0xffffffff" permission="rw" />
+    <node id="main_phase_offset"          address="0x000000B" mask="0xffffffff" permission="rw" />
+
+    <node id="main_freq2_ki"              address="0x000000C" mask="0xffffffff" permission="rw" />
+    <node id="main_freq2_kp"              address="0x000000D" mask="0xffffffff" permission="rw" />
+    <node id="main_phase_avg"             address="0x000000E" mask="0xffffffff" permission="rw" />
+    <node id="main_tuning_source"         address="0x000000F" mask="0x00000001" permission="rw" />
+    <node id="main_tuning_write"          address="0x000000F" mask="0x00000002" permission="rw" />
+    <node id="main_tuning_value"          address="0x0000010" mask="0xffffffff" permission="rw" />
+    <node id="main_tuning_fsm"            address="0x0000011" mask="0xffffffff" permission="r" />
+    <node id="main_tuning_dir_freq"       address="0x0000012" mask="0x00000001" permission="rw" />
+    <node id="main_tuning_dir_freq2"      address="0x0000012" mask="0x00000002" permission="rw" />
+    <node id="main_tuning_dir_phase"      address="0x0000012" mask="0x00000004" permission="rw" />
+    <node id="main_tuning_mode"           address="0x0000012" mask="0x00000018" permission="rw" />
+    <node id="main_tuning_lock_cond"      address="0x0000012" mask="0x000000E0" permission="rw" />
+    <node id="main_tuning_lock_thd"       address="0x0000012" mask="0x00FF0000" permission="rw" />
+    <node id="main_tuning_ulock_thd"      address="0x0000012" mask="0xFF000000" permission="rw" />
+    <node id="helper_freq"                address="0x0000013" mask="0xffffffff" permission="r" />
+    <node id="local_freq"                 address="0x0000014" mask="0xffffffff" permission="r" />
+    <node id="phase_diff"                 address="0x0000015" mask="0xffffffff" permission="r" />
+    <node id="phase_diff_fifo_R0"         address="0x0000016" mask="0xffffffff" permission="r" />
+    <node id="phase_diff_fifo_CSR_full"   address="0x0000017" mask="0x00010000" permission="r" />
+    <node id="phase_diff_fifo_CSR_empty"  address="0x0000017" mask="0x00020000" permission="r" />
+    <node id="autodetection_en"           address="0x0000018" mask="0x00000001" permission="rw" />
+    <node id="autodetection_status"       address="0x0000018" mask="0x00000002" permission="r" />
+</node>
+
+

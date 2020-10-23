@@ -1,0 +1,98 @@
+<node id="nxyter" >
+    <node id="TYPE"                     address="0x000000" permission="r" />
+    <node id="HWV"                      address="0x000004" permission="r" />
+    <!--node id="FPGA"                     address="0x000008" permission="rw" / not available -->
+    <!--node id="ROCID"                    address="0x000010" permission="rw" / not available -->
+    <!--node id="SVN_REVISION"             address="0x000014" permission="rw" / not available -->
+    <!--node id="BUILD_TIME"               address="0x000018" permission="rw" / not available -->
+    <node id="SYSTEM_RESET"             address="0x000100" permission="w" />
+    <node id="ADDSYSMSG"                address="0x000200" permission="w" />
+    <!--node id="reserved"                 address="0x000600" permission="rw" / (formerly ROC_HARDWARE_VERSION) -->
+    <node id="GPIO_CONFIG"              address="0x010000" permission="rw" />
+    <node id="SYNC1_BAUD_START"         address="0x010100" permission="rw" />
+    <node id="SYNC1_BAUD1"              address="0x010104" permission="rw" />
+    <node id="SYNC1_BAUD2"              address="0x010108" permission="rw" />
+    <node id="SYNC1_SCALEDOWN"          address="0x01010C" permission="rw" />
+    <node id="SYNC2_BAUD_START"         address="0x010200" permission="rw" />
+    <node id="SYNC2_BAUD1"              address="0x010204" permission="rw" />
+    <node id="SYNC2_BAUD2"              address="0x010208" permission="rw" />
+    <node id="SYNC3_BAUD_START"         address="0x010300" permission="rw" />
+    <node id="SYNC3_BAUD1"              address="0x010304" permission="rw" />
+    <node id="SYNC3_BAUD2"              address="0x010308" permission="rw" />
+    <!--node id="CMD_LST_NR"               address="0x020000" permission="rw" / not available -->
+    <!--node id="CMD_LST_ACTIVE"           address="0x020004" permission="rw" / not available -->
+    <!--node id="CMD_LST_MEM"              address="0x021000" permission="rw" / not available -->
+    <node id="NX_HWV"                   address="0x400000" permission="r" />
+    <node id="TS_RESET"                 address="0x400010" permission="w" />
+    <node id="FIFO_RESET"               address="0x400014" permission="w" />
+    <node id="NX_INIT"                  address="0x400018" permission="r" />
+    <node id="Burst_Read_1"             address="0x400100" permission="r" />
+    <node id="Burst_Read_2"             address="0x400104" permission="r" />
+    <node id="Burst_Read_3"             address="0x400108" permission="r" />
+    <node id="LT_Low"                   address="0x401000" permission="r" />
+    <node id="LT_High"                  address="0x401004" permission="r" />
+    <node id="ADC_Data"                 address="0x401100" permission="r" />
+    <node id="NX_Data"                  address="0x401104" permission="r" />
+    <node id="Read_empty"               address="0x401108" permission="r" />
+    <node id="Read_full"                address="0x40110C" permission="r" />
+    <node id="Read_THROTTLE"            address="0x401200" permission="r" />
+    <node id="LTS_Delay"                address="0x402000" permission="rw" />
+    <node id="NX0_Delay"                address="0x402010" permission="rw" />
+    <node id="NX1_Delay"                address="0x402014" permission="rw" />
+    <node id="NX2_Delay"                address="0x402018" permission="rw" />
+    <node id="NX3_Delay"                address="0x40201C" permission="rw" />
+    <node id="NX_SR_INIT"               address="0x402100" permission="rw" />
+    <node id="NX_BUFG_SELECT"           address="0x402104" permission="rw" />
+    <node id="NX_SR_INIT2"              address="0x402200" permission="rw" />
+    <node id="NX_BUFG_SELECT2"          address="0x402204" permission="rw" />
+    <node id="NX_ADC_LATENCY1"          address="0x402300" permission="rw" />
+    <node id="NX_ADC_LATENCY2"          address="0x402304" permission="rw" />
+    <node id="NX_ADC_LATENCY3"          address="0x402308" permission="rw" />
+    <node id="NX_ADC_LATENCY4"          address="0x40230C" permission="rw" />
+    <node id="NX_ADC_PORT_SELECT1"      address="0x402400" permission="rw" />
+    <node id="NX_ADC_PORT_SELECT2"      address="0x402404" permission="rw" />
+    <node id="NX_ADC_PORT_SELECT3"      address="0x402408" permission="rw" />
+    <node id="NX_ADC_PORT_SELECT4"      address="0x40240C" permission="rw" />
+    <node id="NX_NXACTIVE"              address="0x402500" permission="rw" />
+    <node id="NX_PARITY_CHECK"          address="0x402504" permission="rw" />
+    <node id="NX_FEB4NX"                address="0x402508" permission="rw" />
+    <node id="NX_DEBUG_MODE"            address="0x402600" permission="rw" />
+    <node id="NX_OCM_PREFETCH"          address="0x402700" permission="w" />
+    <node id="NX_TESTPULSE_RESET_DELAY" address="0x403000" permission="w" />
+    <node id="NX_TESTPULSE_LENGTH"      address="0x403004" permission="w" />
+    <node id="NX_TESTPULSE_LENGTH2"     address="0x403008" permission="w" />
+    <node id="NX_TESTPULSE_NUMBER"      address="0x40300C" permission="w" />
+    <node id="NX_TESTPULSE_START"       address="0x403010" permission="w" />
+    <node id="NX_TESTPULSE_RUNNING"     address="0x403014" permission="r" />
+    <node id="NX_ADC_REG"               address="0x404000" permission="w" />
+    <node id="NX_ADC_ADDR"              address="0x404004" permission="w" />
+    <node id="NX_ADC_ANSWER"            address="0x404008" permission="r" />
+    <node id="NX_ADC_REG2"              address="0x404100" permission="w" />
+    <node id="NX_ADC_ADDR2"             address="0x404104" permission="w" />
+    <node id="NX_ADC_ANSWER2"           address="0x404108" permission="r" />
+    <node id="NX_ADC_DIRECT_1a"         address="0x404200" permission="r" />
+    <node id="NX_ADC_DIRECT_1b"         address="0x404204" permission="r" />
+    <node id="NX_ADC_DIRECT_1c"         address="0x404208" permission="r" />
+    <node id="NX_ADC_DIRECT_1d"         address="0x40420C" permission="r" />
+    <node id="NX_ADC_DIRECT_2a"         address="0x404210" permission="r" />
+    <node id="NX_ADC_DIRECT_2b"         address="0x404214" permission="r" />
+    <node id="NX_ADC_DIRECT_2c"         address="0x404218" permission="r" />
+    <node id="NX_ADC_DIRECT_2d"         address="0x40421C" permission="r" />
+    <!--node id="NX_I2C_DATA"              address="0x410000" permission="rw" />
+    <node id="NX_I2C_RESET"             address="0x410004" permission="rw" />
+    <node id="NX_I2C_REGRESET"          address="0x410008" permission="rw" />
+    <node id="NX_I2C_SLAVEADDR"         address="0x41000C" permission="rw" />
+    <node id="NX_I2C_REGISTER"          address="0x410010" permission="rw" />
+    <node id="NX_I2C_ERROR"             address="0x410020" permission="rw" />
+    <node id="NX_I2C_SWITCH"            address="0x410100" permission="rw" />
+    <node id="NX_I2C_READ16"            address="0x410104" permission="rw" /-->
+    <node id="NX_SPI_WRITE_REG"         address="0x420000" permission="w" />
+    <node id="NX_SPI_READ_REG"          address="0x420004" permission="r" />
+    <node id="NX_SPI_TRANSFER"          address="0x420008" permission="w" />
+    <node id="NX_SPI_READY"             address="0x42000C" permission="r" />
+    <node id="NX_SPI_write_CSn"         address="0x420010" permission="w" />
+    <node id="NX_SPI_write_MOSI"        address="0x420014" permission="w" />
+    <node id="NX_SPI_write_SCLK"        address="0x420018" permission="w" />
+    <node id="NX_SPI_read_MISO"         address="0x42001C" permission="r" />
+    <!--node id="" address="" permission="rw" / -->
+</node>

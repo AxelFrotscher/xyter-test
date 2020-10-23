@@ -1,0 +1,46 @@
+<node id="sts_xyter_dev">
+    <node id="DEV_TYPE"        address="0x0000000" mask="0x000000ff" permission="r" />
+    <node id="FW_VER"          address="0x0000000" mask="0x0000ff00" permission="r" />
+    <node id="FMC0_SPT_DEV"    address="0x0000000" mask="0x00ff0000" permission="r" />
+    <node id="FMC1_SPT_DEV"    address="0x0000000" mask="0xff000000" permission="r" />
+    <node id="STAT_REG_NUM"    address="0x0000001" mask="0x000000ff" permission="r" />
+    <node id="CTRL_REG_NUM"    address="0x0000001" mask="0x0000ff00" permission="r" />
+    <node id="IFACE_SLV_NUM"   address="0x0000001" mask="0x000f0000" permission="r" />
+    <node id="SLV_MASK"        address="0x0000001" mask="0xfff00000" permission="r" />
+    <node id="DEV_TEST_R"      address="0x0000002" mask="0xffffffff" permission="r" />
+    <node id="CDEL_RDY"        address="0x0000003" mask="0x00000001" permission="r" />
+    <node id="CDEL_LOCK"       address="0x0000003" mask="0x00000002" permission="r" />
+    <node id="LTS_SYNC_DONE"   address="0x0000003" mask="0x00000004" permission="r" />
+    <node id="PPS_TO_NOW"      address="0x0000004" mask="0xffffffff" permission="r" />
+    <node id="TFC_FR_PER_CNT"  address="0x0000005" mask="0xffffffff" permission="r" />
+    <node id="TFC_PPS_POS"     address="0x0000006" mask="0xffffffff" permission="r" />
+    <node id="TD_REG_SAT"      address="0x0000007" mask="0xff000000" permission="r" />
+    <node id="TD_REG_READBACK" address="0x0000007" mask="0x00ffffff" permission="r" />
+
+    <node id="DEV_TEST_W"      address="0x0000008" mask="0xffffffff" permission="rw" />
+    <node id="STS_RST_N"       address="0x0000009" mask="0x00000001" permission="rw" />
+    <node id="RST_FIFO"        address="0x0000009" mask="0x00000002" permission="rw" />
+    <node id="DATA_DEST"       address="0x0000009" mask="0x00000004" permission="rw" />
+    <node id="SYNC_ENA"        address="0x0000009" mask="0x00000008" permission="rw" />
+    <node id="DATA_SRC"        address="0x0000009" mask="0x00000010" permission="rw" />
+    <node id="DAT_PROC_RES"    address="0x0000009" mask="0x00000020" permission="rw" />
+    <node id="RST_RAW_FIFO"    address="0x0000009" mask="0x00000040" permission="rw" />
+    <node id="SYS_CMD_DATA"    address="0x0000009" mask="0xFFFF0000" permission="rw" />
+    <node id="CKDEL"           address="0x000000A" mask="0x000001ff" permission="rw" />
+    <node id="CKDELSTR"        address="0x000000A" mask="0x00000200" permission="rw" />
+    <node id="CKOSEL"          address="0x000000A" mask="0x00001C00" permission="rw" />
+    <node id="TD_REG_VAL"      address="0x000000B" mask="0x00ffffff" permission="rw" />
+    <node id="TD_REG_TDVAL"    address="0x000000C" mask="0x00ffffff" permission="rw" />
+    <node id="TD_REG_TDFNUM"   address="0x000000D" mask="0xffffffff" permission="rw" />
+
+    <node id="DATA_FIFO"        module="file://../slave/rfifo.xml"   address="0x00000010" tags="slave"/>
+    <node id="RAW_DATA_FIFO"    module="file://../slave/rfifo.xml"   address="0x00000014" tags="slave"/>
+
+    <node id="IFACE0"      module="file://sts_xyter_iface_dev.xml"   address="0x00000100" tags="slave"/>
+    <node id="IFACE1"      module="file://sts_xyter_iface_dev.xml"   address="0x00000200" tags="slave"/>
+    <node id="IFACE2"      module="file://sts_xyter_iface_dev.xml"   address="0x00000300" tags="slave"/>
+    <node id="IFACE3"      module="file://sts_xyter_iface_dev.xml"   address="0x00000400" tags="slave"/>
+    <node id="IFACE4"      module="file://sts_xyter_iface_dev.xml"   address="0x00000500" tags="slave"/>
+    <node id="IFACE5"      module="file://sts_xyter_iface_dev.xml"   address="0x00000600" tags="slave"/>
+</node>
+

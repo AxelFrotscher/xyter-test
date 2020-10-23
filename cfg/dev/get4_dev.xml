@@ -1,0 +1,90 @@
+<node id="get4_dev">
+    <node id="DEV_TYPE"         address="0x0000000" mask="0x000000ff" permission="r" />
+    <node id="FW_VER"           address="0x0000000" mask="0x0000ff00" permission="r" />
+    <node id="FMC0_SPT_DEV"     address="0x0000000" mask="0x00ff0000" permission="r" />
+    <node id="FMC1_SPT_DEV"     address="0x0000000" mask="0xff000000" permission="r" />
+    <node id="STAT_REG_NUM"     address="0x0000001" mask="0x000000ff" permission="r" />
+    <node id="CTRL_REG_NUM"     address="0x0000001" mask="0x0000ff00" permission="r" />
+    <node id="OTH_SLV_NUM"      address="0x0000001" mask="0x000f0000" permission="r" />
+    <node id="SLV_MASK"         address="0x0000001" mask="0xfff00000" permission="r" />
+    <node id="DEV_TEST_R"       address="0x0000002" mask="0xffffffff" permission="r" />
+    <node id="SPT_HW_VER"       address="0x0000003" mask="0x000000ff" permission="r" />
+    <node id="MAX_GET4_NUM"     address="0x0000003" mask="0x0000ff00" permission="r" />
+    <node id="GET4_DOUBLE_LINK" address="0x0000003" mask="0x00010000" permission="r" />
+    <node id="GBTx_STATUS"      address="0x0000003" mask="0x00020000" permission="r" />
+    <node id="GBTx_NUM"         address="0x0000003" mask="0x00fc0000" permission="r" />
+    <node id="SYNC_DONE"        address="0x0000003" mask="0x20000000" permission="r" />
+    <node id="LTS_SYNC_ERROR"   address="0x0000003" mask="0x40000000" permission="r" />
+    <node id="RADTOL"           address="0x0000003" mask="0x80000000" permission="r" />
+    <node id="LAST_SLCTRL_CMD"  address="0x0000004" mask="0xffffffff" permission="r" />
+    <node id="SCALER"           address="0x0000005" mask="0xffffffff" permission="r" />
+    <node id="DEAD_TIME_COUNT"  address="0x0000006" mask="0xffffffff" permission="r" />
+    <node id="SPI_DATA"         address="0x0000007" mask="0xffffffff" permission="r" />
+    <node id="START_MSG"        address="0x0000008" mask="0xffffffff" permission="r" />
+    <node id="LOST_DATA_NUM"    address="0x0000009" mask="0xffffffff" permission="r" />
+    <node id="PPS_TO_NOW"       address="0x000000a" mask="0xffffffff" permission="r" />
+    <node id="SYNC_EPOCH"       address="0x000000b" mask="0xffffffff" permission="r" />
+    <node id="BERT_RESULT0"     address="0x000000c" mask="0xffffffff" permission="r" />
+    <node id="LATENCY_RESULT0"  address="0x000000d" mask="0xffffffff" permission="r" />
+    <node id="LATENCY_RESULT1"  address="0x000000e" mask="0xffffffff" permission="r" />
+    <node id="LATENCY_STATUS"   address="0x000000f" mask="0xffffffff" permission="r" />
+    <node id="DEV_TEST_W"       address="0x0000040" mask="0xffffffff" permission="wr"/>
+    <node id="RST_GET4_FPGA"    address="0x0000041" mask="0x00000001" permission="wr"/>
+    <node id="RST_GET4_IC"      address="0x0000041" mask="0x00000002" permission="wr"/>
+    <node id="RST_GET4_LINK"    address="0x0000041" mask="0x00000004" permission="wr"/>
+    <node id="ENA_EPOCH_SUPR"   address="0x0000041" mask="0x00000008" permission="wr"/>
+    <node id="DATA_PASS_THR"    address="0x0000041" mask="0x00000010" permission="wr"/>
+    <node id="DATA_SOURCE"      address="0x0000041" mask="0x00000020" permission="wr"/>
+    <node id="DATA_DEST"        address="0x0000041" mask="0x00000040" permission="wr"/>
+    <node id="INNER_SYNC_ENA"   address="0x0000041" mask="0x00000080" permission="wr"/>
+    <node id="PGEN_THROTTLE"    address="0x0000041" mask="0x00000100" permission="wr"/>
+    <node id="CMD_LATENCY"      address="0x0000041" mask="0x00000200" permission="wr"/>
+    <node id="RESET_FIFO"       address="0x0000041" mask="0x00000400" permission="wr"/>
+    <node id="TRIGGER_ENA"      address="0x0000041" mask="0x00000800" permission="wr" description="STAR related" />
+    <node id="TRIG_LINK_SWAP"   address="0x0000041" mask="0x00001000" permission="wr" description="STAR related" />
+    <node id="EPOCH_WAIT_TIME"  address="0x0000041" mask="0x00002000" permission="wr" description="realMS related" />
+    <node id="ALLEPOCH_OUT_EN"  address="0x0000041" mask="0x00004000" permission="wr"/>
+    <node id="SYS_CMD_DATA"     address="0x0000041" mask="0xFFFF0000" permission="wr"/>
+    <node id="GET4_SYNC_CMD"    address="0x0000042" mask="0xffffffff" permission="wr"/>
+    <node id="STAT_CHNL_SEL"    address="0x0000043" mask="0xffffffff" permission="wr"/>
+    <node id="CMD_MASK0_L"      address="0x0000044" mask="0xffffffff" permission="wr"/>
+    <node id="CMD_MASK0_H"      address="0x0000045" mask="0xffffffff" permission="wr"/>
+    <node id="CMD_MASK1_L"      address="0x0000046" mask="0xffffffff" permission="wr"/>
+    <node id="CMD_MASK1_H"      address="0x0000047" mask="0xffffffff" permission="wr"/>
+    <node id="CMD_MASK2_L"      address="0x0000048" mask="0xffffffff" permission="wr"/>
+    <node id="CMD_MASK2_H"      address="0x0000049" mask="0xffffffff" permission="wr"/>
+    <node id="CMD_MASK3_L"      address="0x000004a" mask="0xffffffff" permission="wr"/>
+    <node id="CMD_MASK3_H"      address="0x000004b" mask="0xffffffff" permission="wr"/>
+    <node id="CMD_MASK4_L"      address="0x000004c" mask="0xffffffff" permission="wr"/>
+    <node id="CMD_MASK4_H"      address="0x000004d" mask="0xffffffff" permission="wr"/>
+    <node id="CMD_MASK5_L"      address="0x000004e" mask="0xffffffff" permission="wr"/>
+    <node id="CMD_MASK5_H"      address="0x000004f" mask="0xffffffff" permission="wr"/>
+    <node id="SLCTRL_MASK0_L"   address="0x0000050" mask="0xffffffff" permission="wr"/>
+    <node id="SLCTRL_MASK0_H"   address="0x0000051" mask="0xffffffff" permission="wr"/>
+    <node id="SLCTRL_MASK1_L"   address="0x0000052" mask="0xffffffff" permission="wr"/>
+    <node id="SLCTRL_MASK1_H"   address="0x0000053" mask="0xffffffff" permission="wr"/>
+    <node id="SLCTRL_MASK2_L"   address="0x0000054" mask="0xffffffff" permission="wr"/>
+    <node id="SLCTRL_MASK2_H"   address="0x0000055" mask="0xffffffff" permission="wr"/>
+    <node id="SLCTRL_MASK3_L"   address="0x0000056" mask="0xffffffff" permission="wr"/>
+    <node id="SLCTRL_MASK3_H"   address="0x0000057" mask="0xffffffff" permission="wr"/>
+    <node id="SLCTRL_MASK4_L"   address="0x0000058" mask="0xffffffff" permission="wr"/>
+    <node id="SLCTRL_MASK4_H"   address="0x0000059" mask="0xffffffff" permission="wr"/>
+    <node id="SLCTRL_MASK5_L"   address="0x000005a" mask="0xffffffff" permission="wr"/>
+    <node id="SLCTRL_MASK5_H"   address="0x000005b" mask="0xffffffff" permission="wr"/>
+    <node id="DATA_MASK0_L"     address="0x000005c" mask="0xffffffff" permission="wr"/>
+    <node id="DATA_MASK0_H"     address="0x000005d" mask="0xffffffff" permission="wr"/>
+    <node id="DATA_MASK1_L"     address="0x000005e" mask="0xffffffff" permission="wr"/>
+    <node id="DATA_MASK1_H"     address="0x000005f" mask="0xffffffff" permission="wr"/>
+    <node id="DATA_MASK2_L"     address="0x0000060" mask="0xffffffff" permission="wr"/>
+    <node id="DATA_MASK2_H"     address="0x0000061" mask="0xffffffff" permission="wr"/>
+    <node id="DATA_MASK3_L"     address="0x0000062" mask="0xffffffff" permission="wr"/>
+    <node id="DATA_MASK3_H"     address="0x0000063" mask="0xffffffff" permission="wr"/>
+    <node id="DATA_MASK4_L"     address="0x0000064" mask="0xffffffff" permission="wr"/>
+    <node id="DATA_MASK4_H"     address="0x0000065" mask="0xffffffff" permission="wr"/>
+    <node id="DATA_MASK5_L"     address="0x0000066" mask="0xffffffff" permission="wr"/>
+    <node id="DATA_MASK5_H"     address="0x0000067" mask="0xffffffff" permission="wr"/>
+    <node id="SLCTRL_FIFO"   module="file://../slave/wfifo.xml"     address="0x00000080" tags="slave"/>
+    <node id="DATA_FIFO"     module="file://../slave/rfifo.xml"     address="0x00000084" tags="slave"/>
+    <node id="DATA_FIFO_CTL" module="file://../slave/rfifo_ctl.xml" address="0x00000088" tags="slave"/>
+</node>
+

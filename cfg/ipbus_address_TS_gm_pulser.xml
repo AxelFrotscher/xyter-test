@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<node id="top">
+    <node id="global_dev" module="file://./dev/global_dev_tspulser.xml" address="0x00000000" tags="slave"/>
+    <node id="ts_dev" module="file://./dev/ts_dev.xml" address="0x80000000" tags="slave"/>
+</node>

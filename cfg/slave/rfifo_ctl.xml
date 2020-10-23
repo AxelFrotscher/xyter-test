@@ -1,0 +1,5 @@
+<node id="rfifo_ctl">
+    <node id="RFIFO_DATA" address="0x0" mode="non-incremental" permission="r" />
+    <node id="RFIFO_LEN" address="0x1" permission="r" />
+    <node id="RVALID_LEN" address="0x2" permission="r"/>
+</node>

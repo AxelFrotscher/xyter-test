@@ -1,0 +1,7 @@
+<node id="global_dev">
+    <node id="global_dev_reg" module="file://../slave/global_dev_reg.xml" address="0x00" tags="slave"/>
+    <node id="wfifo" module="file://../slave/wfifo.xml" address="0x20" tags="slave"/>
+    <node id="rfifo" module="file://../slave/rfifo.xml" address="0x24" tags="slave"/>
+    <node id="i2c_ctrl" module="file://../slave/i2c_ctrl.xml" address="0x40" tags="slave"/>
+</node>
+

@@ -1,0 +1,45 @@
+<node id="flim_ctrl_dev">
+    <node id="DEV_TYPE"        address="0x0000000" mask="0x000000ff" permission="r" />
+    <node id="FW_VER"          address="0x0000000" mask="0x0000ff00" permission="r" />
+    <node id="FMC0_SPT_DEV"    address="0x0000000" mask="0x00ff0000" permission="r" />
+    <node id="FMC1_SPT_DEV"    address="0x0000000" mask="0xff000000" permission="r" />
+    <node id="STAT_REG_NUM"    address="0x0000001" mask="0x000000ff" permission="r" />
+    <node id="CTRL_REG_NUM"    address="0x0000001" mask="0x0000ff00" permission="r" />
+    <node id="OTH_SLV_NUM"     address="0x0000001" mask="0x000f0000" permission="r" />
+    <node id="SLV_MASK"        address="0x0000001" mask="0xfff00000" permission="r" />
+    <node id="DEV_TEST_R"      address="0x0000002" mask="0xffffffff" permission="r" />
+    <node id="CURRENT_MS0_L"   address="0x0000003" mask="0xffffffff" permission="r" />
+    <node id="CURRENT_MS0_H"   address="0x0000004" mask="0xffffffff" permission="r" />
+    <node id="MS_CNT_STOPPED"  address="0x0000005" mask="0x00000001" permission="r" />
+
+    <node id="DEV_TEST_W"      address="0x0000010" mask="0xffffffff" permission="wr" />
+    <node id="SET_THRESHOLD"   address="0x0000011" mask="0x00000001" permission="wr" />
+    <node id="SET_MS_PERIOD"   address="0x0000011" mask="0x00000002" permission="wr" />
+    <node id="STOP_MS_CNT"     address="0x0000011" mask="0x00000004" permission="wr" />
+    <node id="START_MS_L"      address="0x0000012" mask="0xffffffff" permission="wr" />
+    <node id="START_MS_H"      address="0x0000013" mask="0xffffffff" permission="wr" />
+    <node id="STOP_MS_L"       address="0x0000014" mask="0xffffffff" permission="wr" />
+    <node id="STOP_MS_H"       address="0x0000015" mask="0xffffffff" permission="wr" />
+    <node id="MS_PERIOD_CNT"   address="0x0000016" mask="0xffffffff" permission="wr" />
+    <node id="MS_PERIOD_NS"    address="0x0000017" mask="0xffffffff" permission="wr" />
+    <node id="link_reset"      address="0x0000018" mask="0x0000000f" permission="wr" />
+    <node id="pgen_enable"     address="0x0000018" mask="0x00010000" permission="wr" />
+    <node id="Tx0_postcursor"  address="0x0000019" mask="0x0000001f" permission="wr" />
+    <node id="Tx0_diffctrl"    address="0x0000019" mask="0x000001e0" permission="wr" />
+    <node id="Tx0_maincursor"  address="0x0000019" mask="0x0000fe00" permission="wr" />
+    <node id="Tx0_precursor"   address="0x0000019" mask="0x001f0000" permission="wr" />
+    <node id="Tx1_postcursor"  address="0x000001a" mask="0x0000001f" permission="wr" />
+    <node id="Tx1_diffctrl"    address="0x000001a" mask="0x000001e0" permission="wr" />
+    <node id="Tx1_maincursor"  address="0x000001a" mask="0x0000fe00" permission="wr" />
+    <node id="Tx1_precursor"   address="0x000001a" mask="0x001f0000" permission="wr" />
+    <node id="Tx2_postcursor"  address="0x000001b" mask="0x0000001f" permission="wr" />
+    <node id="Tx2_diffctrl"    address="0x000001b" mask="0x000001e0" permission="wr" />
+    <node id="Tx2_maincursor"  address="0x000001b" mask="0x0000fe00" permission="wr" />
+    <node id="Tx2_precursor"   address="0x000001b" mask="0x001f0000" permission="wr" />
+    <node id="Tx3_postcursor"  address="0x000001c" mask="0x0000001f" permission="wr" />
+    <node id="Tx3_diffctrl"    address="0x000001c" mask="0x000001e0" permission="wr" />
+    <node id="Tx3_maincursor"  address="0x000001c" mask="0x0000fe00" permission="wr" />
+    <node id="Tx3_precursor"   address="0x000001c" mask="0x001f0000" permission="wr" />
+
+
+</node>

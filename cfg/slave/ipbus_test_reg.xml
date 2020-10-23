@@ -1,0 +1,13 @@
+<node id="reg_file_new" >
+    <node id="ID" address="0x0" permission="r" />
+    <node id="STAT0" address="0x1" permission="r" />
+    <node id="STAT1" address="0x2" permission="r" />
+    <node id="STAT2" address="0x3" permission="r" />
+    <node id="STAT3" address="0x4" permission="r" />
+    <node id="STAT4" address="0x5" permission="r" />
+    <node id="STAT5" address="0x6" permission="r" />
+    <node id="STAT6" address="0x7" permission="r" />
+    <node id="RST" address="0x8" mask="0x00000001" permission="rw" />
+    <node id="FIFO_WORKMODE" address="0x8" mask="0x00000002" permission="rw" />
+    <node id="LED" address="0x9" mask="0x000000ff" permission="rw" />
+</node>

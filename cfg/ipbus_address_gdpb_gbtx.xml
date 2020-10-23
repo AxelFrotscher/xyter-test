@@ -1,0 +1,19 @@
+
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<node id="top">
+    <node id="global_dev"    module="file://./dev/global_dev.xml"    address="0x00000000" tags="slave"/>
+    <node id="get4_dev"      module="file://./dev/get4_dev.xml"      address="0x20000000" tags="slave"/>
+    <node id="GBTx_dev"      module="file://./dev/GBTx_dev.xml"      address="0x40000000" tags="slave"/>
+    <node id="flim_ctrl_dev" module="file://./dev/flim_ctrl_dev_gdpb.xml" address="0x60000000" tags="slave"/>
+    <node id="WR_dev"        module="file://./dev/WR_dev.xml"        address="0x80000000" tags="slave"/>
+</node>
+<!--
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<node id="top">
+    <node id="global_dev"    module="file://./dev/global_dev.xml"    address="0x00000000" tags="slave"/>
+    <node id="get4_dev"      module="file://./dev/get4_dev.xml"      address="0x40000000" tags="slave"/>
+    <node id="GBTx_dev"      module="file://./dev/GBTx_dev.xml"      address="0x80000000" tags="slave"/>
+    <node id="flim_ctrl_dev" module="file://./dev/flim_ctrl_dev.xml" address="0xc0000000" tags="slave"/>
+</node>
+
+!-->

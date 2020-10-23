@@ -1,0 +1,34 @@
+<node id="GBTx_dev">
+ 
+    <node id="GBTX_READY"         address="0x0000000" mask="0x0000003f" permission="r" />
+    <node id="GBTX_ERROR"         address="0x0000000" mask="0x00000fc0" permission="r" />
+    <node id="GBTX_BUSY"          address="0x0000001" mask="0x0000003f" permission="r" />
+    <node id="GBTX_CUR"           address="0x0000001" mask="0x00000fc0" permission="r" />
+    <node id="GBTX_LATENCY"       address="0x0000001" mask="0x0000f000" permission="r" />
+    <node id="GBTX_DataRate0"     address="0x0000002" mask="0xffffffff" permission="r" />
+    <node id="GBTX_DataRate1"     address="0x0000003" mask="0xffffffff" permission="r" />
+    <node id="GBTX_DataRate2"     address="0x0000004" mask="0xffffffff" permission="r" />
+    <node id="GBTX_DataRate3"     address="0x0000005" mask="0xffffffff" permission="r" />
+    <node id="GBTX_DataRate4"     address="0x0000006" mask="0xffffffff" permission="r" />
+    <node id="GBTX_DataRate5"     address="0x0000007" mask="0xffffffff" permission="r" />
+
+    <node id="GBTX_CMD_MASK"      address="0x0000008" mask="0x0000003f" permission="wr"/>
+    <node id="GBTX_MGT_PAR"       address="0x0000009" mask="0x00003fff" permission="wr"/>
+    <node id="CTRL_FIFO"          module="file://../slave/wfifo.xml"   address="0x00000010" tags="slave"/>
+    <node id="DATA_FIFO"          module="file://../slave/rfifo.xml"   address="0x00000014" tags="slave"/>
+
+ <!-- 
+    <node id="GBTX_READY"         address="0x0000000" mask="0x0000003f" permission="r" />
+    <node id="GBTX_ERROR"         address="0x0000000" mask="0x00000fc0" permission="r" />
+    <node id="GBTX_BUSY"          address="0x0000001" mask="0x0000003f" permission="r" />
+    <node id="GBTX_CUR"           address="0x0000001" mask="0x00000fc0" permission="r" />
+    <node id="GBTX_LATENCY"       address="0x0000001" mask="0x0000f000" permission="r" />
+
+    <node id="GBTX_CMD_MASK"      address="0x0000002" mask="0x0000003f" permission="wr"/>
+    <node id="LATENCY_EN"      address="0x0000003" mask="0x00000001" permission="wr"/>
+    <node id="CTRL_FIFO"          module="file://../slave/wfifo.xml"   address="0x00000008" tags="slave"/>
+    <node id="DATA_FIFO"          module="file://../slave/rfifo.xml"   address="0x0000000c" tags="slave"/>
+ -->  
+</node>
+
+

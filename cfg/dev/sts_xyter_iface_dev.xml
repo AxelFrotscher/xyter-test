@@ -1,0 +1,48 @@
+<node id="sts_xyter_iface_dev">
+    <node id="DDEL_LOCK"       address="0x0000000" mask="0x0000001f" permission="r" />
+    <node id="DETO0"           address="0x0000001" mask="0x000001ff" permission="r" />
+    <node id="DETO1"           address="0x0000002" mask="0x000001ff" permission="r" />
+    <node id="DETO2"           address="0x0000003" mask="0x000001ff" permission="r" />
+    <node id="DETO3"           address="0x0000004" mask="0x000001ff" permission="r" />
+    <node id="DETO4"           address="0x0000005" mask="0x000001ff" permission="r" />
+    <node id="CST0"            address="0x0000006" mask="0xffffffff" permission="r" />
+    <node id="CST1"            address="0x0000007" mask="0xffffffff" permission="r" />
+    <node id="CST2"            address="0x0000008" mask="0xffffffff" permission="r" />
+    <node id="CST3"            address="0x0000009" mask="0xffffffff" permission="r" />
+    <node id="CST4"            address="0x000000a" mask="0xffffffff" permission="r" />
+    <node id="TD_CST0"         address="0x000000b" mask="0xffffffff" permission="r" />
+    <node id="TD_CST1"         address="0x000000c" mask="0xffffffff" permission="r" />
+    <node id="ELINK_WARNINGS"  address="0x000000d" mask="0x01ffffff" permission="r" />
+    <node id="STS_RST_N"       address="0x0000010" mask="0x00000001" permission="rw" />
+    <node id="RST_FIFO"        address="0x0000010" mask="0x00000002" permission="rw" />
+    <node id="LINK_BREAK"      address="0x0000010" mask="0x000003E0" permission="rw" />
+    <!-- these lines are not connected in gateware
+    registers should be removed -->
+    <node id="DATA_PASS_THR"   address="0x0000010" mask="0x00000004" permission="rw" />
+    <node id="DATA_SOURCE"     address="0x0000010" mask="0x00000008" permission="rw" />
+    <node id="ENA_EPOCH_SUPR"  address="0x0000010" mask="0x00000010" permission="rw" />
+    <node id="SYNC_ENA"        address="0x0000010" mask="0x00000400" permission="rw" />
+    <!-- end of unused registers -->
+    <node id="DDEL0"           address="0x0000011" mask="0x0000003f" permission="rw" />
+    <node id="DDEL1"           address="0x0000011" mask="0x00000fc0" permission="rw" />
+    <node id="DDEL2"           address="0x0000011" mask="0x0003f000" permission="rw" />
+    <node id="DDEL3"           address="0x0000011" mask="0x00fc0000" permission="rw" />
+    <node id="DDEL4"           address="0x0000011" mask="0x3f000000" permission="rw" />
+    <node id="DETI0"           address="0x0000012" mask="0x0000000f" permission="rw" />
+    <node id="DETI1"           address="0x0000012" mask="0x000000f0" permission="rw" />
+    <node id="DETI2"           address="0x0000012" mask="0x00000f00" permission="rw" />
+    <node id="DETI3"           address="0x0000012" mask="0x0000f000" permission="rw" />
+    <node id="DETI4"           address="0x0000012" mask="0x000f0000" permission="rw" />
+    <node id="ENC_MODE"        address="0x0000012" mask="0x00300000" permission="rw" />
+    <node id="CMD0"            address="0x0000013" mask="0xffffffff" permission="rw" />
+    <node id="CMD1"            address="0x0000014" mask="0xffffffff" permission="rw" />
+    <node id="CMD2"            address="0x0000015" mask="0xffffffff" permission="rw" />
+    <node id="CMD3"            address="0x0000016" mask="0xffffffff" permission="rw" />
+    <node id="CMD4"            address="0x0000017" mask="0xffffffff" permission="rw" />
+    <node id="TD_CMD0"         address="0x0000018" mask="0xffffffff" permission="rw" />
+    <node id="TD_CMD1"         address="0x0000019" mask="0xffffffff" permission="rw" />
+    <node id="TD_FNUM0"        address="0x000001a" mask="0xffffffff" permission="rw" />
+    <node id="TD_FNUM1"        address="0x000001b" mask="0xffffffff" permission="rw" />
+    <node id="REPEAT_CMD0_PERIOD"     address="0x000001c" mask="0xffffffff" permission="rw" />
+</node>
+

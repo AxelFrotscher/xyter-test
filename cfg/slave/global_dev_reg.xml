@@ -1,0 +1,40 @@
+<node id="global_dev_reg" >
+    <node id="DEV_TYPE"     address="0x0" mask="0x000000ff" permission="r" />
+    <node id="FW_VER"       address="0x0" mask="0x0000ff00" permission="r" />
+    <node id="FMC0_SPT_DEV" address="0x0" mask="0x00ff0000" permission="r" />
+    <node id="FMC1_SPT_DEV" address="0x0" mask="0xff000000" permission="r" />
+    <node id="STAT_REG_NUM" address="0x1" mask="0x000000ff" permission="r" />
+    <node id="CTRL_REG_NUM" address="0x1" mask="0x0000ff00" permission="r" />
+    <node id="OTH_SLV_NUM"  address="0x1" mask="0x000f0000" permission="r" />
+    <node id="SLV_MASK"     address="0x1" mask="0xfff00000" permission="r" />
+    <node id="AFCK_ID"      address="0x2" mask="0xffffffff" permission="r" />
+    <node id="FMC0_SPT_BD"  address="0x3" mask="0x000000ff" permission="r" />
+    <node id="FMC1_SPT_BD"  address="0x3" mask="0x0000ff00" permission="r" />
+    <node id="FMC0_EXIST"   address="0x3" mask="0x00010000" permission="r" />
+    <node id="FMC1_EXIST"   address="0x3" mask="0x00020000" permission="r" />
+    <node id="IPB_DEV_NUM"  address="0x3" mask="0xff000000" permission="r" />
+    <node id="IP_ADDR"      address="0x4" mask="0xffffffff" permission="r" />
+    <node id="MAC_ADDR_M"   address="0x5" mask="0x0000ffff" permission="r" />
+    <node id="MAC_ADDR_L"   address="0x6" mask="0xffffffff" permission="r" />
+    <node id="SYS_TEST_RD"  address="0x7" mask="0xffffffff" permission="r" />
+    <node id="FW_TIME_STAMP" address="0x8" mask="0xffffffff" permission="r" />
+    <node id="FP_READY_BUSY" address="0x9" mask="0x00000001" permission="r" />
+    <node id="FP_DONE"       address="0x9" mask="0x00000002" permission="r" />
+    <node id="FP_ERROR"      address="0x9" mask="0x00000004" permission="r" />
+    <node id="FP_ERROR_CODE" address="0x9" mask="0x000000F8" permission="r" />
+    <node id="FP_STATUS"     address="0x9" mask="0x0000ff00" permission="r" />
+    <node id="FR_RD_READY"    address="0x9" mask="0x00010000" permission="r" />
+    <node id="FR_RD_DONE"     address="0x9" mask="0x00020000" permission="r" />
+    <node id="SYS_RST"      address="0x10" mask="0xffffffff" permission="rw" />
+    <node id="EQ_ID"        address="0x11" mask="0x0000ffff" permission="rw" />
+    <node id="SYS_TEST_WR"  address="0x12" mask="0xffffffff" permission="rw" />
+    <node id="FLASH_CMD_D"  address="0x13" mask="0xffffffff" permission="rw" />
+    <node id="FP_START"     address="0x14" mask="0x00000001" permission="rw" />
+    <node id="FP_CHK_ID_ONLY" address="0x14" mask="0x00000002" permission="rw" />
+    <node id="FP_VERIFY_ONLY" address="0x14" mask="0x00000004" permission="rw" />
+    <node id="FR_START"     address="0x14" mask="0x00010000" permission="rw" />
+    <node id="FR_RD_START_ADDR"  address="0x14" mask="0x00020000" permission="rw" />
+    <node id="FR_RD_COUNT"  address="0x14" mask="0x00040000" permission="rw" />
+    <node id="FP_FR_SEL"    address="0x14" mask="0x80000000" permission="rw" />
+
+</node>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<node id="ipbus_test_dev">
+    <node id="reg_file" module="file://../slave/ipbus_test_reg.xml" address="0x00" tags="slave"/>
+    <node id="wfifo0" module="file://../slave/wfifo.xml" address="0x00000010" tags="slave"/>
+    <node id="rfifo0" module="file://../slave/rfifo.xml" address="0x00000014" tags="slave"/>
+</node>
+

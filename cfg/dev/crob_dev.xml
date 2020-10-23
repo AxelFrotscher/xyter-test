@@ -1,0 +1,714 @@
+<node id="crob">
+  <node id="crob_addr_ver"  address="0x000" permission="r"/>
+  <node id="sys_ctrl"       address="0x200" permission="rw">
+      <node id="febs_mode"      mask="0x0000000E"/>
+  </node>
+  <node id="link_mask[0]"   address="0x201" permission="rw"/>
+  <node id="link_mask[1]"   address="0x202" permission="rw"/>
+  <node id="ic">
+    <node id="ctrl"         address="0x203" permission="rw">
+      <node id="reset"          mask="0x00000001"/>
+      <node id="start_write"    mask="0x00000002"/>
+      <node id="start_read"     mask="0x00000004"/>
+      <node id="addr"           mask="0x0000FF00"/>
+    </node>
+    <node id="tx_rega_nbtr" address="0x204" permission="rw">
+      <node id="reg_addr"       mask="0x0000FFFF"/>
+      <node id="bytes_to_read"  mask="0xFFFF0000"/>
+    </node>
+    <node id="tx_data"      address="0x205" permission="rw"/>
+    <node id="status"       address="0x001" permission="r">
+      <node id="ready"          mask="0x00000001"/>
+      <node id="empty"          mask="0x00000002"/>
+      <node id="addr"           mask="0x0000FF00"/>
+    </node>
+    <node id="rx_mptr_nbw" address="0x002" permission="r">
+      <node id="mem_ptr"        mask="0x0000FFFF"/>
+      <node id="words_read"     mask="0xFFFF0000"/>
+    </node>
+    <node id="rx_data"     address="0x003" permission="r"/>
+  </node>
+  <node id="ec">
+    <node id="ctrl"        address="0x206" permission="rw">
+      <node id="start_reset"    mask="0x00000001"/>
+      <node id="start_connect"  mask="0x00000002"/>
+      <node id="start_cmd"      mask="0x00000004"/>
+      <node id="inject_crc_err" mask="0x00000008"/>
+    </node>
+    <node id="tx_cmd"      address="0x207" permission="rw">
+      <node id="command"        mask="0xFF000000"/>
+      <node id="addr"           mask="0x00FF0000"/>
+      <node id="chan"           mask="0x0000FF00"/>
+      <node id="trans_id"       mask="0x000000FF"/>
+    </node>
+    <node id="tx_data"     address="0x208" permission="rw"/>
+    <node id="status"      address="0x004" permission="r">
+      <node id="received"       mask="0x00000001"/>
+      <node id="len"            mask="0x0000FF00"/>
+      <node id="error"          mask="0x00FF0000"/>
+    </node>
+    <node id="status2"     address="0x005" permission="r">
+      <node id="control"        mask="0xFF000000"/>
+      <node id="addr"           mask="0x00FF0000"/>
+      <node id="chan"           mask="0x0000FF00"/>
+      <node id="transid"        mask="0x000000FF"/>
+    </node>
+    <node id="rx_data"     address="0x006" permission="r"/>
+  </node>
+  <node id="ct[0]">
+    <node id="sx_mask_enc_mode" address="0x209" permission="rw">
+      <node id="mask"          mask="0x000000FF"/>
+      <node id="mode"          mask="0xC0000000"/>
+    </node>
+    <node id="sx[0]">
+      <node id="stats[0]"    address="0x007" permission="r"/>
+      <node id="stats[1]"    address="0x008" permission="r"/>
+      <node id="stats[2]"    address="0x009" permission="r"/>
+      <node id="stats[3]"    address="0x00a" permission="r"/>
+      <node id="stats[4]"    address="0x00b" permission="r"/>
+      <node id="td_stats[0]" address="0x00c" permission="r"/>
+      <node id="td_stats[1]" address="0x00d" permission="r"/>
+    </node>
+    <node id="sx[1]">
+      <node id="stats[0]"    address="0x00e" permission="r"/>
+      <node id="stats[1]"    address="0x00f" permission="r"/>
+      <node id="stats[2]"    address="0x010" permission="r"/>
+      <node id="stats[3]"    address="0x011" permission="r"/>
+      <node id="stats[4]"    address="0x012" permission="r"/>
+      <node id="td_stats[0]" address="0x013" permission="r"/>
+      <node id="td_stats[1]" address="0x014" permission="r"/>
+    </node>
+    <node id="sx[2]">
+      <node id="stats[0]"    address="0x015" permission="r"/>
+      <node id="stats[1]"    address="0x016" permission="r"/>
+      <node id="stats[2]"    address="0x017" permission="r"/>
+      <node id="stats[3]"    address="0x018" permission="r"/>
+      <node id="stats[4]"    address="0x019" permission="r"/>
+      <node id="td_stats[0]" address="0x01a" permission="r"/>
+      <node id="td_stats[1]" address="0x01b" permission="r"/>
+    </node>
+    <node id="sx[3]">
+      <node id="stats[0]"    address="0x01c" permission="r"/>
+      <node id="stats[1]"    address="0x01d" permission="r"/>
+      <node id="stats[2]"    address="0x01e" permission="r"/>
+      <node id="stats[3]"    address="0x01f" permission="r"/>
+      <node id="stats[4]"    address="0x020" permission="r"/>
+      <node id="td_stats[0]" address="0x021" permission="r"/>
+      <node id="td_stats[1]" address="0x022" permission="r"/>
+    </node>
+    <node id="sx[4]">
+      <node id="stats[0]"    address="0x023" permission="r"/>
+      <node id="stats[1]"    address="0x024" permission="r"/>
+      <node id="stats[2]"    address="0x025" permission="r"/>
+      <node id="stats[3]"    address="0x026" permission="r"/>
+      <node id="stats[4]"    address="0x027" permission="r"/>
+      <node id="td_stats[0]" address="0x028" permission="r"/>
+      <node id="td_stats[1]" address="0x029" permission="r"/>
+    </node>
+    <node id="sx[5]">
+      <node id="stats[0]"    address="0x02a" permission="r"/>
+      <node id="stats[1]"    address="0x02b" permission="r"/>
+      <node id="stats[2]"    address="0x02c" permission="r"/>
+      <node id="stats[3]"    address="0x02d" permission="r"/>
+      <node id="stats[4]"    address="0x02e" permission="r"/>
+      <node id="td_stats[0]" address="0x02f" permission="r"/>
+      <node id="td_stats[1]" address="0x030" permission="r"/>
+    </node>
+    <node id="sx[6]">
+      <node id="stats[0]"    address="0x031" permission="r"/>
+      <node id="stats[1]"    address="0x032" permission="r"/>
+      <node id="stats[2]"    address="0x033" permission="r"/>
+      <node id="stats[3]"    address="0x034" permission="r"/>
+      <node id="stats[4]"    address="0x035" permission="r"/>
+      <node id="td_stats[0]" address="0x036" permission="r"/>
+      <node id="td_stats[1]" address="0x037" permission="r"/>
+    </node>
+    <node id="sx[7]">
+      <node id="stats[0]"    address="0x038" permission="r"/>
+      <node id="stats[1]"    address="0x039" permission="r"/>
+      <node id="stats[2]"    address="0x03a" permission="r"/>
+      <node id="stats[3]"    address="0x03b" permission="r"/>
+      <node id="stats[4]"    address="0x03c" permission="r"/>
+      <node id="td_stats[0]" address="0x03d" permission="r"/>
+      <node id="td_stats[1]" address="0x03e" permission="r"/>
+    </node>
+    <node id="cmds[0]"       address="0x20a" permission="rw"/>
+    <node id="cmds[1]"       address="0x20b" permission="rw"/>
+    <node id="cmds[2]"       address="0x20c" permission="rw"/>
+    <node id="cmds[3]"       address="0x20d" permission="rw"/>
+    <node id="cmds[4]"       address="0x20e" permission="rw"/>
+    <node id="auto_c0_per"   address="0x20f" permission="rw"/>
+    <node id="td_cmds[0]"    address="0x210" permission="rw"/>
+    <node id="td_cmds[1]"    address="0x211" permission="rw"/>
+    <node id="td_fnums[0]"   address="0x212" permission="rw"/>
+    <node id="td_fnums[1]"   address="0x213" permission="rw"/>
+  </node>
+  <node id="ct[1]">
+    <node id="sx_mask_enc_mode" address="0x214" permission="rw">
+      <node id="mask"          mask="0x000000FF"/>
+      <node id="mode"          mask="0xC0000000"/>
+    </node>
+    <node id="sx[0]">
+      <node id="stats[0]"    address="0x03f" permission="r"/>
+      <node id="stats[1]"    address="0x040" permission="r"/>
+      <node id="stats[2]"    address="0x041" permission="r"/>
+      <node id="stats[3]"    address="0x042" permission="r"/>
+      <node id="stats[4]"    address="0x043" permission="r"/>
+      <node id="td_stats[0]" address="0x044" permission="r"/>
+      <node id="td_stats[1]" address="0x045" permission="r"/>
+    </node>
+    <node id="sx[1]">
+      <node id="stats[0]"    address="0x046" permission="r"/>
+      <node id="stats[1]"    address="0x047" permission="r"/>
+      <node id="stats[2]"    address="0x048" permission="r"/>
+      <node id="stats[3]"    address="0x049" permission="r"/>
+      <node id="stats[4]"    address="0x04a" permission="r"/>
+      <node id="td_stats[0]" address="0x04b" permission="r"/>
+      <node id="td_stats[1]" address="0x04c" permission="r"/>
+    </node>
+    <node id="sx[2]">
+      <node id="stats[0]"    address="0x04d" permission="r"/>
+      <node id="stats[1]"    address="0x04e" permission="r"/>
+      <node id="stats[2]"    address="0x04f" permission="r"/>
+      <node id="stats[3]"    address="0x050" permission="r"/>
+      <node id="stats[4]"    address="0x051" permission="r"/>
+      <node id="td_stats[0]" address="0x052" permission="r"/>
+      <node id="td_stats[1]" address="0x053" permission="r"/>
+    </node>
+    <node id="sx[3]">
+      <node id="stats[0]"    address="0x054" permission="r"/>
+      <node id="stats[1]"    address="0x055" permission="r"/>
+      <node id="stats[2]"    address="0x056" permission="r"/>
+      <node id="stats[3]"    address="0x057" permission="r"/>
+      <node id="stats[4]"    address="0x058" permission="r"/>
+      <node id="td_stats[0]" address="0x059" permission="r"/>
+      <node id="td_stats[1]" address="0x05a" permission="r"/>
+    </node>
+    <node id="sx[4]">
+      <node id="stats[0]"    address="0x05b" permission="r"/>
+      <node id="stats[1]"    address="0x05c" permission="r"/>
+      <node id="stats[2]"    address="0x05d" permission="r"/>
+      <node id="stats[3]"    address="0x05e" permission="r"/>
+      <node id="stats[4]"    address="0x05f" permission="r"/>
+      <node id="td_stats[0]" address="0x060" permission="r"/>
+      <node id="td_stats[1]" address="0x061" permission="r"/>
+    </node>
+    <node id="sx[5]">
+      <node id="stats[0]"    address="0x062" permission="r"/>
+      <node id="stats[1]"    address="0x063" permission="r"/>
+      <node id="stats[2]"    address="0x064" permission="r"/>
+      <node id="stats[3]"    address="0x065" permission="r"/>
+      <node id="stats[4]"    address="0x066" permission="r"/>
+      <node id="td_stats[0]" address="0x067" permission="r"/>
+      <node id="td_stats[1]" address="0x068" permission="r"/>
+    </node>
+    <node id="sx[6]">
+      <node id="stats[0]"    address="0x069" permission="r"/>
+      <node id="stats[1]"    address="0x06a" permission="r"/>
+      <node id="stats[2]"    address="0x06b" permission="r"/>
+      <node id="stats[3]"    address="0x06c" permission="r"/>
+      <node id="stats[4]"    address="0x06d" permission="r"/>
+      <node id="td_stats[0]" address="0x06e" permission="r"/>
+      <node id="td_stats[1]" address="0x06f" permission="r"/>
+    </node>
+    <node id="sx[7]">
+      <node id="stats[0]"    address="0x070" permission="r"/>
+      <node id="stats[1]"    address="0x071" permission="r"/>
+      <node id="stats[2]"    address="0x072" permission="r"/>
+      <node id="stats[3]"    address="0x073" permission="r"/>
+      <node id="stats[4]"    address="0x074" permission="r"/>
+      <node id="td_stats[0]" address="0x075" permission="r"/>
+      <node id="td_stats[1]" address="0x076" permission="r"/>
+    </node>
+    <node id="cmds[0]"       address="0x215" permission="rw"/>
+    <node id="cmds[1]"       address="0x216" permission="rw"/>
+    <node id="cmds[2]"       address="0x217" permission="rw"/>
+    <node id="cmds[3]"       address="0x218" permission="rw"/>
+    <node id="cmds[4]"       address="0x219" permission="rw"/>
+    <node id="auto_c0_per"   address="0x21a" permission="rw"/>
+    <node id="td_cmds[0]"    address="0x21b" permission="rw"/>
+    <node id="td_cmds[1]"    address="0x21c" permission="rw"/>
+    <node id="td_fnums[0]"   address="0x21d" permission="rw"/>
+    <node id="td_fnums[1]"   address="0x21e" permission="rw"/>
+  </node>
+  <node id="ct[2]">
+    <node id="sx_mask_enc_mode" address="0x21f" permission="rw">
+      <node id="mask"          mask="0x000000FF"/>
+      <node id="mode"          mask="0xC0000000"/>
+    </node>
+    <node id="sx[0]">
+      <node id="stats[0]"    address="0x077" permission="r"/>
+      <node id="stats[1]"    address="0x078" permission="r"/>
+      <node id="stats[2]"    address="0x079" permission="r"/>
+      <node id="stats[3]"    address="0x07a" permission="r"/>
+      <node id="stats[4]"    address="0x07b" permission="r"/>
+      <node id="td_stats[0]" address="0x07c" permission="r"/>
+      <node id="td_stats[1]" address="0x07d" permission="r"/>
+    </node>
+    <node id="sx[1]">
+      <node id="stats[0]"    address="0x07e" permission="r"/>
+      <node id="stats[1]"    address="0x07f" permission="r"/>
+      <node id="stats[2]"    address="0x080" permission="r"/>
+      <node id="stats[3]"    address="0x081" permission="r"/>
+      <node id="stats[4]"    address="0x082" permission="r"/>
+      <node id="td_stats[0]" address="0x083" permission="r"/>
+      <node id="td_stats[1]" address="0x084" permission="r"/>
+    </node>
+    <node id="sx[2]">
+      <node id="stats[0]"    address="0x085" permission="r"/>
+      <node id="stats[1]"    address="0x086" permission="r"/>
+      <node id="stats[2]"    address="0x087" permission="r"/>
+      <node id="stats[3]"    address="0x088" permission="r"/>
+      <node id="stats[4]"    address="0x089" permission="r"/>
+      <node id="td_stats[0]" address="0x08a" permission="r"/>
+      <node id="td_stats[1]" address="0x08b" permission="r"/>
+    </node>
+    <node id="sx[3]">
+      <node id="stats[0]"    address="0x08c" permission="r"/>
+      <node id="stats[1]"    address="0x08d" permission="r"/>
+      <node id="stats[2]"    address="0x08e" permission="r"/>
+      <node id="stats[3]"    address="0x08f" permission="r"/>
+      <node id="stats[4]"    address="0x090" permission="r"/>
+      <node id="td_stats[0]" address="0x091" permission="r"/>
+      <node id="td_stats[1]" address="0x092" permission="r"/>
+    </node>
+    <node id="sx[4]">
+      <node id="stats[0]"    address="0x093" permission="r"/>
+      <node id="stats[1]"    address="0x094" permission="r"/>
+      <node id="stats[2]"    address="0x095" permission="r"/>
+      <node id="stats[3]"    address="0x096" permission="r"/>
+      <node id="stats[4]"    address="0x097" permission="r"/>
+      <node id="td_stats[0]" address="0x098" permission="r"/>
+      <node id="td_stats[1]" address="0x099" permission="r"/>
+    </node>
+    <node id="sx[5]">
+      <node id="stats[0]"    address="0x09a" permission="r"/>
+      <node id="stats[1]"    address="0x09b" permission="r"/>
+      <node id="stats[2]"    address="0x09c" permission="r"/>
+      <node id="stats[3]"    address="0x09d" permission="r"/>
+      <node id="stats[4]"    address="0x09e" permission="r"/>
+      <node id="td_stats[0]" address="0x09f" permission="r"/>
+      <node id="td_stats[1]" address="0x0a0" permission="r"/>
+    </node>
+    <node id="sx[6]">
+      <node id="stats[0]"    address="0x0a1" permission="r"/>
+      <node id="stats[1]"    address="0x0a2" permission="r"/>
+      <node id="stats[2]"    address="0x0a3" permission="r"/>
+      <node id="stats[3]"    address="0x0a4" permission="r"/>
+      <node id="stats[4]"    address="0x0a5" permission="r"/>
+      <node id="td_stats[0]" address="0x0a6" permission="r"/>
+      <node id="td_stats[1]" address="0x0a7" permission="r"/>
+    </node>
+    <node id="sx[7]">
+      <node id="stats[0]"    address="0x0a8" permission="r"/>
+      <node id="stats[1]"    address="0x0a9" permission="r"/>
+      <node id="stats[2]"    address="0x0aa" permission="r"/>
+      <node id="stats[3]"    address="0x0ab" permission="r"/>
+      <node id="stats[4]"    address="0x0ac" permission="r"/>
+      <node id="td_stats[0]" address="0x0ad" permission="r"/>
+      <node id="td_stats[1]" address="0x0ae" permission="r"/>
+    </node>
+    <node id="cmds[0]"       address="0x220" permission="rw"/>
+    <node id="cmds[1]"       address="0x221" permission="rw"/>
+    <node id="cmds[2]"       address="0x222" permission="rw"/>
+    <node id="cmds[3]"       address="0x223" permission="rw"/>
+    <node id="cmds[4]"       address="0x224" permission="rw"/>
+    <node id="auto_c0_per"   address="0x225" permission="rw"/>
+    <node id="td_cmds[0]"    address="0x226" permission="rw"/>
+    <node id="td_cmds[1]"    address="0x227" permission="rw"/>
+    <node id="td_fnums[0]"   address="0x228" permission="rw"/>
+    <node id="td_fnums[1]"   address="0x229" permission="rw"/>
+  </node>
+  <node id="ct[3]">
+    <node id="sx_mask_enc_mode" address="0x22a" permission="rw">
+      <node id="mask"          mask="0x000000FF"/>
+      <node id="mode"          mask="0xC0000000"/>
+    </node>
+    <node id="sx[0]">
+      <node id="stats[0]"    address="0x0af" permission="r"/>
+      <node id="stats[1]"    address="0x0b0" permission="r"/>
+      <node id="stats[2]"    address="0x0b1" permission="r"/>
+      <node id="stats[3]"    address="0x0b2" permission="r"/>
+      <node id="stats[4]"    address="0x0b3" permission="r"/>
+      <node id="td_stats[0]" address="0x0b4" permission="r"/>
+      <node id="td_stats[1]" address="0x0b5" permission="r"/>
+    </node>
+    <node id="sx[1]">
+      <node id="stats[0]"    address="0x0b6" permission="r"/>
+      <node id="stats[1]"    address="0x0b7" permission="r"/>
+      <node id="stats[2]"    address="0x0b8" permission="r"/>
+      <node id="stats[3]"    address="0x0b9" permission="r"/>
+      <node id="stats[4]"    address="0x0ba" permission="r"/>
+      <node id="td_stats[0]" address="0x0bb" permission="r"/>
+      <node id="td_stats[1]" address="0x0bc" permission="r"/>
+    </node>
+    <node id="sx[2]">
+      <node id="stats[0]"    address="0x0bd" permission="r"/>
+      <node id="stats[1]"    address="0x0be" permission="r"/>
+      <node id="stats[2]"    address="0x0bf" permission="r"/>
+      <node id="stats[3]"    address="0x0c0" permission="r"/>
+      <node id="stats[4]"    address="0x0c1" permission="r"/>
+      <node id="td_stats[0]" address="0x0c2" permission="r"/>
+      <node id="td_stats[1]" address="0x0c3" permission="r"/>
+    </node>
+    <node id="sx[3]">
+      <node id="stats[0]"    address="0x0c4" permission="r"/>
+      <node id="stats[1]"    address="0x0c5" permission="r"/>
+      <node id="stats[2]"    address="0x0c6" permission="r"/>
+      <node id="stats[3]"    address="0x0c7" permission="r"/>
+      <node id="stats[4]"    address="0x0c8" permission="r"/>
+      <node id="td_stats[0]" address="0x0c9" permission="r"/>
+      <node id="td_stats[1]" address="0x0ca" permission="r"/>
+    </node>
+    <node id="sx[4]">
+      <node id="stats[0]"    address="0x0cb" permission="r"/>
+      <node id="stats[1]"    address="0x0cc" permission="r"/>
+      <node id="stats[2]"    address="0x0cd" permission="r"/>
+      <node id="stats[3]"    address="0x0ce" permission="r"/>
+      <node id="stats[4]"    address="0x0cf" permission="r"/>
+      <node id="td_stats[0]" address="0x0d0" permission="r"/>
+      <node id="td_stats[1]" address="0x0d1" permission="r"/>
+    </node>
+    <node id="sx[5]">
+      <node id="stats[0]"    address="0x0d2" permission="r"/>
+      <node id="stats[1]"    address="0x0d3" permission="r"/>
+      <node id="stats[2]"    address="0x0d4" permission="r"/>
+      <node id="stats[3]"    address="0x0d5" permission="r"/>
+      <node id="stats[4]"    address="0x0d6" permission="r"/>
+      <node id="td_stats[0]" address="0x0d7" permission="r"/>
+      <node id="td_stats[1]" address="0x0d8" permission="r"/>
+    </node>
+    <node id="sx[6]">
+      <node id="stats[0]"    address="0x0d9" permission="r"/>
+      <node id="stats[1]"    address="0x0da" permission="r"/>
+      <node id="stats[2]"    address="0x0db" permission="r"/>
+      <node id="stats[3]"    address="0x0dc" permission="r"/>
+      <node id="stats[4]"    address="0x0dd" permission="r"/>
+      <node id="td_stats[0]" address="0x0de" permission="r"/>
+      <node id="td_stats[1]" address="0x0df" permission="r"/>
+    </node>
+    <node id="sx[7]">
+      <node id="stats[0]"    address="0x0e0" permission="r"/>
+      <node id="stats[1]"    address="0x0e1" permission="r"/>
+      <node id="stats[2]"    address="0x0e2" permission="r"/>
+      <node id="stats[3]"    address="0x0e3" permission="r"/>
+      <node id="stats[4]"    address="0x0e4" permission="r"/>
+      <node id="td_stats[0]" address="0x0e5" permission="r"/>
+      <node id="td_stats[1]" address="0x0e6" permission="r"/>
+    </node>
+    <node id="cmds[0]"       address="0x22b" permission="rw"/>
+    <node id="cmds[1]"       address="0x22c" permission="rw"/>
+    <node id="cmds[2]"       address="0x22d" permission="rw"/>
+    <node id="cmds[3]"       address="0x22e" permission="rw"/>
+    <node id="cmds[4]"       address="0x22f" permission="rw"/>
+    <node id="auto_c0_per"   address="0x230" permission="rw"/>
+    <node id="td_cmds[0]"    address="0x231" permission="rw"/>
+    <node id="td_cmds[1]"    address="0x232" permission="rw"/>
+    <node id="td_fnums[0]"   address="0x233" permission="rw"/>
+    <node id="td_fnums[1]"   address="0x234" permission="rw"/>
+  </node>
+  <node id="ct[4]">
+    <node id="sx_mask_enc_mode" address="0x235" permission="rw">
+      <node id="mask"          mask="0x000000FF"/>
+      <node id="mode"          mask="0xC0000000"/>
+    </node>
+    <node id="sx[0]">
+      <node id="stats[0]"    address="0x0e7" permission="r"/>
+      <node id="stats[1]"    address="0x0e8" permission="r"/>
+      <node id="stats[2]"    address="0x0e9" permission="r"/>
+      <node id="stats[3]"    address="0x0ea" permission="r"/>
+      <node id="stats[4]"    address="0x0eb" permission="r"/>
+      <node id="td_stats[0]" address="0x0ec" permission="r"/>
+      <node id="td_stats[1]" address="0x0ed" permission="r"/>
+    </node>
+    <node id="sx[1]">
+      <node id="stats[0]"    address="0x0ee" permission="r"/>
+      <node id="stats[1]"    address="0x0ef" permission="r"/>
+      <node id="stats[2]"    address="0x0f0" permission="r"/>
+      <node id="stats[3]"    address="0x0f1" permission="r"/>
+      <node id="stats[4]"    address="0x0f2" permission="r"/>
+      <node id="td_stats[0]" address="0x0f3" permission="r"/>
+      <node id="td_stats[1]" address="0x0f4" permission="r"/>
+    </node>
+    <node id="sx[2]">
+      <node id="stats[0]"    address="0x0f5" permission="r"/>
+      <node id="stats[1]"    address="0x0f6" permission="r"/>
+      <node id="stats[2]"    address="0x0f7" permission="r"/>
+      <node id="stats[3]"    address="0x0f8" permission="r"/>
+      <node id="stats[4]"    address="0x0f9" permission="r"/>
+      <node id="td_stats[0]" address="0x0fa" permission="r"/>
+      <node id="td_stats[1]" address="0x0fb" permission="r"/>
+    </node>
+    <node id="sx[3]">
+      <node id="stats[0]"    address="0x0fc" permission="r"/>
+      <node id="stats[1]"    address="0x0fd" permission="r"/>
+      <node id="stats[2]"    address="0x0fe" permission="r"/>
+      <node id="stats[3]"    address="0x0ff" permission="r"/>
+      <node id="stats[4]"    address="0x100" permission="r"/>
+      <node id="td_stats[0]" address="0x101" permission="r"/>
+      <node id="td_stats[1]" address="0x102" permission="r"/>
+    </node>
+    <node id="sx[4]">
+      <node id="stats[0]"    address="0x103" permission="r"/>
+      <node id="stats[1]"    address="0x104" permission="r"/>
+      <node id="stats[2]"    address="0x105" permission="r"/>
+      <node id="stats[3]"    address="0x106" permission="r"/>
+      <node id="stats[4]"    address="0x107" permission="r"/>
+      <node id="td_stats[0]" address="0x108" permission="r"/>
+      <node id="td_stats[1]" address="0x109" permission="r"/>
+    </node>
+    <node id="sx[5]">
+      <node id="stats[0]"    address="0x10a" permission="r"/>
+      <node id="stats[1]"    address="0x10b" permission="r"/>
+      <node id="stats[2]"    address="0x10c" permission="r"/>
+      <node id="stats[3]"    address="0x10d" permission="r"/>
+      <node id="stats[4]"    address="0x10e" permission="r"/>
+      <node id="td_stats[0]" address="0x10f" permission="r"/>
+      <node id="td_stats[1]" address="0x110" permission="r"/>
+    </node>
+    <node id="sx[6]">
+      <node id="stats[0]"    address="0x111" permission="r"/>
+      <node id="stats[1]"    address="0x112" permission="r"/>
+      <node id="stats[2]"    address="0x113" permission="r"/>
+      <node id="stats[3]"    address="0x114" permission="r"/>
+      <node id="stats[4]"    address="0x115" permission="r"/>
+      <node id="td_stats[0]" address="0x116" permission="r"/>
+      <node id="td_stats[1]" address="0x117" permission="r"/>
+    </node>
+    <node id="sx[7]">
+      <node id="stats[0]"    address="0x118" permission="r"/>
+      <node id="stats[1]"    address="0x119" permission="r"/>
+      <node id="stats[2]"    address="0x11a" permission="r"/>
+      <node id="stats[3]"    address="0x11b" permission="r"/>
+      <node id="stats[4]"    address="0x11c" permission="r"/>
+      <node id="td_stats[0]" address="0x11d" permission="r"/>
+      <node id="td_stats[1]" address="0x11e" permission="r"/>
+    </node>
+    <node id="cmds[0]"       address="0x236" permission="rw"/>
+    <node id="cmds[1]"       address="0x237" permission="rw"/>
+    <node id="cmds[2]"       address="0x238" permission="rw"/>
+    <node id="cmds[3]"       address="0x239" permission="rw"/>
+    <node id="cmds[4]"       address="0x23a" permission="rw"/>
+    <node id="auto_c0_per"   address="0x23b" permission="rw"/>
+    <node id="td_cmds[0]"    address="0x23c" permission="rw"/>
+    <node id="td_cmds[1]"    address="0x23d" permission="rw"/>
+    <node id="td_fnums[0]"   address="0x23e" permission="rw"/>
+    <node id="td_fnums[1]"   address="0x23f" permission="rw"/>
+  </node>
+  <node id="ct[5]">
+    <node id="sx_mask_enc_mode" address="0x240" permission="rw">
+      <node id="mask"          mask="0x000000FF"/>
+      <node id="mode"          mask="0xC0000000"/>
+    </node>
+    <node id="sx[0]">
+      <node id="stats[0]"    address="0x11f" permission="r"/>
+      <node id="stats[1]"    address="0x120" permission="r"/>
+      <node id="stats[2]"    address="0x121" permission="r"/>
+      <node id="stats[3]"    address="0x122" permission="r"/>
+      <node id="stats[4]"    address="0x123" permission="r"/>
+      <node id="td_stats[0]" address="0x124" permission="r"/>
+      <node id="td_stats[1]" address="0x125" permission="r"/>
+    </node>
+    <node id="sx[1]">
+      <node id="stats[0]"    address="0x126" permission="r"/>
+      <node id="stats[1]"    address="0x127" permission="r"/>
+      <node id="stats[2]"    address="0x128" permission="r"/>
+      <node id="stats[3]"    address="0x129" permission="r"/>
+      <node id="stats[4]"    address="0x12a" permission="r"/>
+      <node id="td_stats[0]" address="0x12b" permission="r"/>
+      <node id="td_stats[1]" address="0x12c" permission="r"/>
+    </node>
+    <node id="sx[2]">
+      <node id="stats[0]"    address="0x12d" permission="r"/>
+      <node id="stats[1]"    address="0x12e" permission="r"/>
+      <node id="stats[2]"    address="0x12f" permission="r"/>
+      <node id="stats[3]"    address="0x130" permission="r"/>
+      <node id="stats[4]"    address="0x131" permission="r"/>
+      <node id="td_stats[0]" address="0x132" permission="r"/>
+      <node id="td_stats[1]" address="0x133" permission="r"/>
+    </node>
+    <node id="sx[3]">
+      <node id="stats[0]"    address="0x134" permission="r"/>
+      <node id="stats[1]"    address="0x135" permission="r"/>
+      <node id="stats[2]"    address="0x136" permission="r"/>
+      <node id="stats[3]"    address="0x137" permission="r"/>
+      <node id="stats[4]"    address="0x138" permission="r"/>
+      <node id="td_stats[0]" address="0x139" permission="r"/>
+      <node id="td_stats[1]" address="0x13a" permission="r"/>
+    </node>
+    <node id="sx[4]">
+      <node id="stats[0]"    address="0x13b" permission="r"/>
+      <node id="stats[1]"    address="0x13c" permission="r"/>
+      <node id="stats[2]"    address="0x13d" permission="r"/>
+      <node id="stats[3]"    address="0x13e" permission="r"/>
+      <node id="stats[4]"    address="0x13f" permission="r"/>
+      <node id="td_stats[0]" address="0x140" permission="r"/>
+      <node id="td_stats[1]" address="0x141" permission="r"/>
+    </node>
+    <node id="sx[5]">
+      <node id="stats[0]"    address="0x142" permission="r"/>
+      <node id="stats[1]"    address="0x143" permission="r"/>
+      <node id="stats[2]"    address="0x144" permission="r"/>
+      <node id="stats[3]"    address="0x145" permission="r"/>
+      <node id="stats[4]"    address="0x146" permission="r"/>
+      <node id="td_stats[0]" address="0x147" permission="r"/>
+      <node id="td_stats[1]" address="0x148" permission="r"/>
+    </node>
+    <node id="sx[6]">
+      <node id="stats[0]"    address="0x149" permission="r"/>
+      <node id="stats[1]"    address="0x14a" permission="r"/>
+      <node id="stats[2]"    address="0x14b" permission="r"/>
+      <node id="stats[3]"    address="0x14c" permission="r"/>
+      <node id="stats[4]"    address="0x14d" permission="r"/>
+      <node id="td_stats[0]" address="0x14e" permission="r"/>
+      <node id="td_stats[1]" address="0x14f" permission="r"/>
+    </node>
+    <node id="sx[7]">
+      <node id="stats[0]"    address="0x150" permission="r"/>
+      <node id="stats[1]"    address="0x151" permission="r"/>
+      <node id="stats[2]"    address="0x152" permission="r"/>
+      <node id="stats[3]"    address="0x153" permission="r"/>
+      <node id="stats[4]"    address="0x154" permission="r"/>
+      <node id="td_stats[0]" address="0x155" permission="r"/>
+      <node id="td_stats[1]" address="0x156" permission="r"/>
+    </node>
+    <node id="cmds[0]"       address="0x241" permission="rw"/>
+    <node id="cmds[1]"       address="0x242" permission="rw"/>
+    <node id="cmds[2]"       address="0x243" permission="rw"/>
+    <node id="cmds[3]"       address="0x244" permission="rw"/>
+    <node id="cmds[4]"       address="0x245" permission="rw"/>
+    <node id="auto_c0_per"   address="0x246" permission="rw"/>
+    <node id="td_cmds[0]"    address="0x247" permission="rw"/>
+    <node id="td_cmds[1]"    address="0x248" permission="rw"/>
+    <node id="td_fnums[0]"   address="0x249" permission="rw"/>
+    <node id="td_fnums[1]"   address="0x24a" permission="rw"/>
+  </node>
+  <node id="ul">
+    <node id="seq_det_out[0]"  address="0x157" permission="r"/>
+    <node id="seq_det_out[1]"  address="0x158" permission="r"/>
+    <node id="seq_det_out[2]"  address="0x159" permission="r"/>
+    <node id="seq_det_out[3]"  address="0x15a" permission="r"/>
+    <node id="seq_det_out[4]"  address="0x15b" permission="r"/>
+    <node id="seq_det_out[5]"  address="0x15c" permission="r"/>
+    <node id="seq_det_out[6]"  address="0x15d" permission="r"/>
+    <node id="seq_det_out[7]"  address="0x15e" permission="r"/>
+    <node id="seq_det_out[8]"  address="0x15f" permission="r"/>
+    <node id="seq_det_out[9]"  address="0x160" permission="r"/>
+    <node id="seq_det_out[10]" address="0x161" permission="r"/>
+    <node id="seq_det_out[11]" address="0x162" permission="r"/>
+    <node id="seq_det_out[12]" address="0x163" permission="r"/>
+    <node id="seq_det_out[13]" address="0x164" permission="r"/>
+    <node id="seq_det_out[14]" address="0x165" permission="r"/>
+    <node id="seq_det_out[15]" address="0x166" permission="r"/>
+    <node id="seq_det_out[16]" address="0x167" permission="r"/>
+    <node id="seq_det_out[17]" address="0x168" permission="r"/>
+    <node id="seq_det_out[18]" address="0x169" permission="r"/>
+    <node id="seq_det_out[19]" address="0x16a" permission="r"/>
+    <node id="seq_det_out[20]" address="0x16b" permission="r"/>
+    <node id="seq_det_out[21]" address="0x16c" permission="r"/>
+    <node id="seq_det_out[22]" address="0x16d" permission="r"/>
+    <node id="seq_det_out[23]" address="0x16e" permission="r"/>
+    <node id="seq_det_out[24]" address="0x16f" permission="r"/>
+    <node id="seq_det_out[25]" address="0x170" permission="r"/>
+    <node id="seq_det_out[26]" address="0x171" permission="r"/>
+    <node id="seq_det_out[27]" address="0x172" permission="r"/>
+    <node id="seq_det_out[28]" address="0x173" permission="r"/>
+    <node id="seq_det_out[29]" address="0x174" permission="r"/>
+    <node id="seq_det_out[30]" address="0x175" permission="r"/>
+    <node id="seq_det_out[31]" address="0x176" permission="r"/>
+    <node id="seq_det_out[32]" address="0x177" permission="r"/>
+    <node id="seq_det_out[33]" address="0x178" permission="r"/>
+    <node id="seq_det_out[34]" address="0x179" permission="r"/>
+    <node id="seq_det_out[35]" address="0x17a" permission="r"/>
+    <node id="seq_det_out[36]" address="0x17b" permission="r"/>
+    <node id="seq_det_out[37]" address="0x17c" permission="r"/>
+    <node id="seq_det_out[38]" address="0x17d" permission="r"/>
+    <node id="seq_det_out[39]" address="0x17e" permission="r"/>
+    <node id="seq_det_out[40]" address="0x17f" permission="r"/>
+    <node id="seq_det_out[41]" address="0x180" permission="r"/>
+    <node id="warnings[0]"     address="0x181" permission="r"/>
+    <node id="warnings[1]"     address="0x182" permission="r"/>
+    <node id="warnings[2]"     address="0x183" permission="r"/>
+    <node id="warnings[3]"     address="0x184" permission="r"/>
+    <node id="warnings[4]"     address="0x185" permission="r"/>
+    <node id="warnings[5]"     address="0x186" permission="r"/>
+    <node id="warnings[6]"     address="0x187" permission="r"/>
+    <node id="warnings[7]"     address="0x188" permission="r"/>
+    <node id="warnings[8]"     address="0x189" permission="r"/>
+    <node id="warnings[9]"     address="0x18a" permission="r"/>
+    <node id="warnings[10]"    address="0x18b" permission="r"/>
+    <node id="warnings[11]"    address="0x18c" permission="r"/>
+    <node id="warnings[12]"    address="0x18d" permission="r"/>
+    <node id="warnings[13]"    address="0x18e" permission="r"/>
+    <node id="warnings[14]"    address="0x18f" permission="r"/>
+    <node id="warnings[15]"    address="0x190" permission="r"/>
+    <node id="warnings[16]"    address="0x191" permission="r"/>
+    <node id="warnings[17]"    address="0x192" permission="r"/>
+    <node id="warnings[18]"    address="0x193" permission="r"/>
+    <node id="warnings[19]"    address="0x194" permission="r"/>
+    <node id="warnings[20]"    address="0x195" permission="r"/>
+    <node id="warnings[21]"    address="0x196" permission="r"/>
+    <node id="warnings[22]"    address="0x197" permission="r"/>
+    <node id="warnings[23]"    address="0x198" permission="r"/>
+    <node id="warnings[24]"    address="0x199" permission="r"/>
+    <node id="warnings[25]"    address="0x19a" permission="r"/>
+    <node id="warnings[26]"    address="0x19b" permission="r"/>
+    <node id="warnings[27]"    address="0x19c" permission="r"/>
+    <node id="warnings[28]"    address="0x19d" permission="r"/>
+    <node id="warnings[29]"    address="0x19e" permission="r"/>
+    <node id="warnings[30]"    address="0x19f" permission="r"/>
+    <node id="warnings[31]"    address="0x1a0" permission="r"/>
+    <node id="warnings[32]"    address="0x1a1" permission="r"/>
+    <node id="warnings[33]"    address="0x1a2" permission="r"/>
+    <node id="warnings[34]"    address="0x1a3" permission="r"/>
+    <node id="warnings[35]"    address="0x1a4" permission="r"/>
+    <node id="warnings[36]"    address="0x1a5" permission="r"/>
+    <node id="warnings[37]"    address="0x1a6" permission="r"/>
+    <node id="warnings[38]"    address="0x1a7" permission="r"/>
+    <node id="warnings[39]"    address="0x1a8" permission="r"/>
+    <node id="warnings[40]"    address="0x1a9" permission="r"/>
+    <node id="warnings[41]"    address="0x1aa" permission="r"/>
+    <node id="seq_det_in[0]"   address="0x24b" permission="rw"/>
+    <node id="seq_det_in[1]"   address="0x24c" permission="rw"/>
+    <node id="seq_det_in[2]"   address="0x24d" permission="rw"/>
+    <node id="seq_det_in[3]"   address="0x24e" permission="rw"/>
+    <node id="seq_det_in[4]"   address="0x24f" permission="rw"/>
+    <node id="seq_det_in[5]"   address="0x250" permission="rw"/>
+    <node id="seq_det_in[6]"   address="0x251" permission="rw"/>
+    <node id="seq_det_in[7]"   address="0x252" permission="rw"/>
+    <node id="seq_det_in[8]"   address="0x253" permission="rw"/>
+    <node id="seq_det_in[9]"   address="0x254" permission="rw"/>
+    <node id="seq_det_in[10]"  address="0x255" permission="rw"/>
+    <node id="seq_det_in[11]"  address="0x256" permission="rw"/>
+    <node id="seq_det_in[12]"  address="0x257" permission="rw"/>
+    <node id="seq_det_in[13]"  address="0x258" permission="rw"/>
+    <node id="seq_det_in[14]"  address="0x259" permission="rw"/>
+    <node id="seq_det_in[15]"  address="0x25a" permission="rw"/>
+    <node id="seq_det_in[16]"  address="0x25b" permission="rw"/>
+    <node id="seq_det_in[17]"  address="0x25c" permission="rw"/>
+    <node id="seq_det_in[18]"  address="0x25d" permission="rw"/>
+    <node id="seq_det_in[19]"  address="0x25e" permission="rw"/>
+    <node id="seq_det_in[20]"  address="0x25f" permission="rw"/>
+    <node id="seq_det_in[21]"  address="0x260" permission="rw"/>
+    <node id="seq_det_in[22]"  address="0x261" permission="rw"/>
+    <node id="seq_det_in[23]"  address="0x262" permission="rw"/>
+    <node id="seq_det_in[24]"  address="0x263" permission="rw"/>
+    <node id="seq_det_in[25]"  address="0x264" permission="rw"/>
+    <node id="seq_det_in[26]"  address="0x265" permission="rw"/>
+    <node id="seq_det_in[27]"  address="0x266" permission="rw"/>
+    <node id="seq_det_in[28]"  address="0x267" permission="rw"/>
+    <node id="seq_det_in[29]"  address="0x268" permission="rw"/>
+    <node id="seq_det_in[30]"  address="0x269" permission="rw"/>
+    <node id="seq_det_in[31]"  address="0x26a" permission="rw"/>
+    <node id="seq_det_in[32]"  address="0x26b" permission="rw"/>
+    <node id="seq_det_in[33]"  address="0x26c" permission="rw"/>
+    <node id="seq_det_in[34]"  address="0x26d" permission="rw"/>
+    <node id="seq_det_in[35]"  address="0x26e" permission="rw"/>
+    <node id="seq_det_in[36]"  address="0x26f" permission="rw"/>
+    <node id="seq_det_in[37]"  address="0x270" permission="rw"/>
+    <node id="seq_det_in[38]"  address="0x271" permission="rw"/>
+    <node id="seq_det_in[39]"  address="0x272" permission="rw"/>
+    <node id="seq_det_in[40]"  address="0x273" permission="rw"/>
+    <node id="seq_det_in[41]"  address="0x274" permission="rw"/>
+  </node>
+</node>
