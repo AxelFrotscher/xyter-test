@@ -328,17 +328,6 @@ def check_trim(sts, prompt):
   print "Ch: {0:3d} enc: {1:4.1f} Flip charge mean: {2:3.1f}"\
         .format(quick_channel, hnoise_avg[quick_channel - ch_min], hmean_avg[quick_channel - ch_min])
 
-  ## ----------------- Plot noise and linearity analysis ---------------------##
-  f = plt.figure()
-  plt.step(ch_array,hnoise_avg)
-  plt.xlabel('Channel number')
-  plt.ylabel('ENC[electrons]')
-  plt.title('Quick noise estimation')
-  plt.grid(True, linestyle='--', color='0.75')
-  #plt.show()
-
-  f.savefig(filename_scan + '.png', bbox_inches = 'tight' )
-  myfile.close()
 # ---------------------------------------------------------------------------------------
 rdch = 63
 test_thr = 129
