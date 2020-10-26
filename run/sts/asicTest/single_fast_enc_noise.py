@@ -324,7 +324,7 @@ def check_trim(sts, prompt):
       break
   hmean_avg[quick_channel - ch_min] = np.mean(hmean[quick_channel - ch_min])
   hnoise_avg[quick_channel - ch_min] = np.mean(hnoise[quick_channel - ch_min]) *\
-                                       336 * (1 + 5 * much_modifier)
+                                       349 * (1 + 5 * much_modifier)
   print "Ch: {0:3d} enc: {1:4.1f} Flip charge mean: {2:3.1f}"\
         .format(quick_channel, hnoise_avg[quick_channel - ch_min], hmean_avg[quick_channel - ch_min])
 
