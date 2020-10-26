@@ -1,0 +1,17 @@
+[DEBUG] The public device information is:
+[DEBUG] Device type:         0x6
+[DEBUG] Firmware version:    0x12
+[DEBUG] Support FMC0:        0x1
+[DEBUG] Support FMC1:        0x1
+[DEBUG] Status reg number:   8
+[DEBUG] Control reg number:  6
+[DEBUG] Interface slaves:    6
+[DEBUG] Other slave type:    0x2
+[INFO] 
+AFCK ID:  0x6166
+[INFO] 
+AFCK MAC: fc:00:00:00:61:66
+[DEBUG] Write wraddr ACK: 0x0088e809 when writing r130 c11 val 0x   0
+[DEBUG] ACK fields: seqIn 3, seqOut 1 CP 1 Status a TS_MSB 0 CRC 9
+[DEBUG] Write wrdata ACK: 0x0089680a when writing r130 c11 val 0x   0
+[DEBUG] ACK fields: seqIn 3, seqOut 2 CP 1 Status a TS_MSB 0 CRC a

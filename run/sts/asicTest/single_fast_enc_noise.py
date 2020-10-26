@@ -39,7 +39,7 @@ LINK_ASIC =  0b00001
 
 log = logging.getLogger()
 # This is a global level, sets the miminum level which can be reported
-log.setLevel(logging.DEBUG)
+log.setLevel(logging.INFO)
 sh = logging.StreamHandler(sys.stderr)
 sh.setLevel(logging.INFO)
 log.addHandler(sh)
@@ -239,7 +239,7 @@ def check_trim(sts, prompt):
 
     sts.write_check(130, 4, vp)
     assert vp == sts.read(130, 4) & 0xFF, "Set Vp differs from read Vp!"
-    print "\nvp:{0:3d} ({1:.2f}fC)".format(vp, a),
+    print "\nVp{0:2d} {1:.2f}fC".format(vp, a),
 
     grp_shslow = ((shslowfs & 0x3) << 2 | (quick_channel & 0x3))
 
@@ -251,7 +251,6 @@ def check_trim(sts, prompt):
 
     # Number of trigger pulses
     for npulse in range(0, loop_max):
-      #print " loop ", npulse, "\n"
       # Pulse triggering
       sts.write_check(130, 11, 128)
       #time.sleep(0.001)
@@ -269,7 +268,7 @@ def check_trim(sts, prompt):
       vcnt[quick_channel][d_counter][ivp] = cnt_val
       d_counter += 1
 
-    print "ch: {:3d}".format(quick_channel),
+    print "ch{:3d}".format(quick_channel),
     d_counter = 0
     for d in range(d_min, d_max):
       print '{0}'.format(vcnt[quick_channel][d_counter][ivp]),
@@ -279,14 +278,13 @@ def check_trim(sts, prompt):
 
   # Axel write out filename_scan
   for vp in range(vp_min, vp_max, vp_step):
-      myfile.write("vp {0:3d} ch {1:3d}:".format(vp,quick_channel))
+      myfile.write("\nvp {0:3d} ch {1:3d}:".format(vp,quick_channel))
       for d in range(d_min, d_max):
         myfile.write('{:4d}'.format(vcnt[quick_channel][d - d_min]
                                         [(vp - vp_min) / vp_step]))
-      myfile.write("\n")
 
   print "\n............. Quick noise- linearity analysis ............\n"
-  d_list = [27, 28, 29, 30]          # Defining used discriminators, 26 missin'
+  d_list = [26, 27, 28, 29, 30]  # Defining used discriminators, 31 = TDC
   d_len = len(d_list)
   print "d_len: {}".format(d_len)
 
@@ -315,7 +313,8 @@ def check_trim(sts, prompt):
   hnoise_avg[quick_channel - ch_min] = np.mean(hnoise[quick_channel - ch_min]) *\
                                        349 * (1 + 5 * much_modifier)
   print "Ch: {0:3d} enc: {1:4.1f} Flip charge mean: {2:3.1f}"\
-        .format(quick_channel, hnoise_avg[quick_channel - ch_min], hmean_avg[quick_channel - ch_min])
+        .format(quick_channel, hnoise_avg[quick_channel - ch_min],
+                hmean_avg[quick_channel - ch_min])
 
 # ---------------------------------------------------------------------------------------
 rdch = 63

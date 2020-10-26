@@ -39,14 +39,14 @@ LINK_ASIC =  0b00001
 
 log = logging.getLogger()
 # This is a global level, sets the miminum level which can be reported
-log.setLevel(logging.DEBUG)
+log.setLevel(logging.INFO)
 sh = logging.StreamHandler(sys.stderr)
 sh.setLevel(logging.INFO)
 log.addHandler(sh)
 fh = logging.FileHandler("./logs/" + sys.argv[0].replace('py', 'log'), 'w')
 #fh = logging.FileHandler("/home/ststest/cbmsoft/python_ipbus/run/sts/asicTest/logs/fast_enc_noise.log", 'w')
 
-fh.setLevel(logging.DEBUG)
+fh.setLevel(logging.INFO)
 fmt = logging.Formatter('[%(levelname)s] %(message)s')
 fh.setFormatter(fmt)
 log.addHandler(fh)
@@ -237,12 +237,11 @@ def check_trim(sts, prompt):
             .format(vp_min, vp_max, vp)
 
     sts.write_check(130, 4, vp)
-    print "\n\nvp: {0:3d} ({1:2f} fC), vpulse: {2}"\
-           .format(vp, a, sts.read(130, 4) & 0xFF)
+    assert vp == sts.read(130, 4) & 0xFF, "Set Vp differs from Read Vp"
+    print "\n\nvp: {0:3d} ({1:.2f} fC)".format(vp, a)
 
     #loop over groups
     for grp in range(grp_min, grp_max):
-      #max_ch_grp = 124+ grp
       # Included the slow shaper configuration (90,130,220,280ns)
       grp_shslow = ((shslowfs & 0x3) << 2 | (grp & 0x3))
 
@@ -254,7 +253,6 @@ def check_trim(sts, prompt):
 
       # Number of trigger pulses
       for npulse in range(0, loop_max):
-        #print " loop ", npulse, "\n"
         # Pulse triggering
         sts.write_check(130, 11, 128)
        # time.sleep(0.001)
@@ -279,38 +277,28 @@ def check_trim(sts, prompt):
 
       ch_counter = grp
       for ch in range(grp, ch_max,4):
-          if(ch == 45):
+          if(ch == 107):
             print ""
-          if(ch == 44 or ch == 45):
-            print "cnt_ch: {:3d}".format(ch),
+          if(ch == 106 or ch == 107):
+            print "ch: {:3d}".format(ch),
           d_counter = 0
           for d in range(d_min, d_max):
-            if(ch == 44 or ch == 45):
+            if(ch == 106 or ch == 107):
               print '{0}'.format(vcnt[ch][d_counter][ivp]),
             d_counter+= 1
           ch_counter += 4
           #print "\n"
     ivp += 1
 
-  ivp = 0
+  # Write out to file Axel
   for vp in range(vp_min, vp_max, vp_step):
-    ch_counter = 0
     for ch in range(ch_min, ch_max, ch_step):
-      if(ch == 1):
-        print "\nvp {0:3d} ch: {1:3d}: ".format(vp, ch),
-      myfile.write("vp {0:3d}  ch {1:3d}: ".format(vp,ch))
-      d_counter = 0
+      myfile.write("\nvp {0:3d} ch {1:3d}:".format(vp,ch))
       for d in range(d_min, d_max):
-        if(ch%10 == 1):
-          print '\n{0}'.format(vcnt[ch][d_counter][ivp]),
-        myfile.write('{:6d}'.format(vcnt[ch][d_counter][ivp]))
-        d_counter += 1
-      ch_counter += 1
-      myfile.write("\n")
-    ivp += 1
+        myfile.write('{:4d}'.format(vcnt[ch][d - d_min][(vp - vp_min) / vp_step]))
 
   print "\n............. Quick noise- linearity analysis ............\n"
-  d_list = [27, 28, 29, 30]          # Defining used discriminators, 26 missin'
+  d_list = [26, 27, 28, 29, 30]   # Defining used discriminators, 31 = TDC
   d_len = len(d_list)
   print "d_len: {}".format(d_len)
 
@@ -368,7 +356,7 @@ d_min = 0               # Minimum discriminator (highest threshold)
 d_max = 32              # Maximum discriminator (lowest threshold)
 
 ivp = 0
-vp_min = 40             # Minimum charge injected
+vp_min = 38             # Minimum charge injected
 vp_max = 80             # Maximum charge injected
 vp_step = 1             # Charge steps
 

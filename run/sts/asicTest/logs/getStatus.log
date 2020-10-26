@@ -1,0 +1,41 @@
+[DEBUG] The public device information is:
+[DEBUG] Device type:         0x6
+[DEBUG] Firmware version:    0x12
+[DEBUG] Support FMC0:        0x1
+[DEBUG] Support FMC1:        0x1
+[DEBUG] Status reg number:   8
+[DEBUG] Control reg number:  6
+[DEBUG] Interface slaves:    6
+[DEBUG] Other slave type:    0x2
+[INFO] 
+AFCK ID:  0x6166
+[INFO] 
+AFCK MAC: fc:00:00:00:61:66
+[DEBUG] Return val = 0x00a3c00d
+[DEBUG] Return val = 0x00a02294
+[DEBUG] Return val = 0x00a0001f
+[DEBUG] Return val = 0x00a00025
+[DEBUG] Return val = 0x00a0002e
+[DEBUG] Return val = 0x00a00033
+[DEBUG] Return val = 0x00a00038
+[DEBUG] Return val = 0x00a00047
+[DEBUG] Return val = 0x00a0f78c
+[DEBUG] Return val = 0x00a001d2
+[DEBUG] Return val = 0x00a0001f
+[DEBUG] Return val = 0x00a5c822
+[DEBUG] Return val = 0x00a6b02b
+[DEBUG] Return val = 0x00a3e670
+[DEBUG] Change slot to have a full pair for write command
+[DEBUG] Write wraddr ACK: 0x008fe009 when writing r192 c27 val 0x   0
+[DEBUG] ACK fields: seqIn 1, seqOut 15 CP 1 Status 8 TS_MSB 0 CRC 9
+[DEBUG] Write wrdata ACK: 0x00886006 when writing r192 c27 val 0x   0
+[DEBUG] ACK fields: seqIn 1, seqOut 0 CP 1 Status 8 TS_MSB 0 CRC 6
+[DEBUG] Write wraddr ACK: 0x0088e007 when writing r192 c24 val 0x   0
+[DEBUG] ACK fields: seqIn 3, seqOut 1 CP 1 Status 8 TS_MSB 0 CRC 7
+[DEBUG] Write wrdata ACK: 0x00896004 when writing r192 c24 val 0x   0
+[DEBUG] ACK fields: seqIn 3, seqOut 2 CP 1 Status 8 TS_MSB 0 CRC 4
+[DEBUG] Change slot to have a full pair for write command
+[DEBUG] Write wraddr ACK: 0x0089e005 when writing r192 c30 val 0x   0
+[DEBUG] ACK fields: seqIn 5, seqOut 3 CP 1 Status 8 TS_MSB 0 CRC 5
+[DEBUG] Write wrdata ACK: 0x008a6002 when writing r192 c30 val 0x   0
+[DEBUG] ACK fields: seqIn 5, seqOut 4 CP 1 Status 8 TS_MSB 0 CRC 2
