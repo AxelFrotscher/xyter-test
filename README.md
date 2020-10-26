@@ -19,3 +19,7 @@ To acquire data with the current settings, run _python saveRawData.py 0 0 [lengt
 
 ### Getting ENC values
 To get the ENC values of all channels, run _python fast_enc_noise.py_. For a single channel use _python single_fast_enc_noise.py [channel number]_.
+
+### References
+
+Many Pictures, as well the XYTER manual and the CBM Progress Reports can be found at the [STRASSE Wiki](https://www.strasse.tu-darmstadt.de/Electronics) 
