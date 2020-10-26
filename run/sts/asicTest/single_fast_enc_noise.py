@@ -221,13 +221,11 @@ def check_trim(sts, prompt):
 
   vcnt = [[[0 for vp in range(vp_min, vp_max, vp_step)] for d in range(d_min,d_max)]
                                                 for ch in range(ch_max/ch_step)]
-  #vcnt = [[[0 for vp in range(5000)] for d in range(20,d_max)]
-  #                                   for ch in range(ch_max/ch_step)]
+
   nd = 31
   nthr = 256
   nch = 256
 
-  #quick_channel = 45
   quick_channel  = int( sys.argv[1] )
 
   print "\n......Start acquiring data......"
@@ -240,9 +238,9 @@ def check_trim(sts, prompt):
             .format(vp_min, vp_max, vp)
 
     sts.write_check(130, 4, vp)
-    print "\nvp: {0:3d} ({1:3f} fC), vpulse: {2}"\
-           .format(vp, a, sts.read(130, 4) & 0xFF),
-    
+    assert vp == sts.read(130, 4) & 0xFF, "Set Vp differs from read Vp!"
+    print "\nvp:{0:3d} ({1:.2f}fC)".format(vp, a),
+
     grp_shslow = ((shslowfs & 0x3) << 2 | (quick_channel & 0x3))
 
     # ADC counters resets
@@ -271,30 +269,21 @@ def check_trim(sts, prompt):
       vcnt[quick_channel][d_counter][ivp] = cnt_val
       d_counter += 1
 
-    print "cnt_ch: {:3d}".format(quick_channel),
+    print "ch: {:3d}".format(quick_channel),
     d_counter = 0
     for d in range(d_min, d_max):
       print '{0}'.format(vcnt[quick_channel][d_counter][ivp]),
       d_counter+= 1
-    
+
     ivp+=1
 
-  ivp = 0
+  # Axel write out filename_scan
   for vp in range(vp_min, vp_max, vp_step):
-    ch_counter = 0
-    for ch in range(ch_min, ch_max, ch_step):
-      if(ch == 130):
-        print "\nvp {0:3d} ch: {1:3d}: ".format(vp, ch),
-      myfile.write("vp {0:3d}  ch {1:3d}: ".format(vp,ch))
-      d_counter = 0
+      myfile.write("vp {0:3d} ch {1:3d}:".format(vp,quick_channel))
       for d in range(d_min, d_max):
-        if(ch == 130):
-          print '{0}'.format(vcnt[ch][d_counter][ivp]),
-        myfile.write('{:6d}'.format(vcnt[ch][d_counter][ivp]))
-        d_counter += 1
-      ch_counter += 1
+        myfile.write('{:4d}'.format(vcnt[quick_channel][d - d_min]
+                                        [(vp - vp_min) / vp_step]))
       myfile.write("\n")
-    ivp += 1
 
   print "\n............. Quick noise- linearity analysis ............\n"
   d_list = [27, 28, 29, 30]          # Defining used discriminators, 26 missin'
@@ -399,7 +388,6 @@ feb_serial_nr = 65
 asic_test_nr = 4.9
 
 date = time.strftime("%y%m%d%H%M")
-#date = "180320"
 module_nr = "T-1"
 
 #Files to be created to store voltage scan data
