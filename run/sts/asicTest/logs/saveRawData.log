@@ -1,0 +1,19 @@
+[DEBUG] The public device information is:
+[DEBUG] Device type:         0x6
+[DEBUG] Firmware version:    0x12
+[DEBUG] Support FMC0:        0x1
+[DEBUG] Support FMC1:        0x1
+[DEBUG] Status reg number:   8
+[DEBUG] Control reg number:  6
+[DEBUG] Interface slaves:    6
+[DEBUG] Other slave type:    0x2
+[INFO] 
+AFCK ID:  0x6166
+[INFO] 
+AFCK MAC: fc:00:00:00:61:66
+[DEBUG] Reset raw data FIFO
+[INFO] ----------------------------------------------------------------
+[INFO] ----------------------------------------------------------------
+[INFO] ----------------------------------------------------------------
+[INFO] ----------------------------------------------------------------
+[INFO] Done
