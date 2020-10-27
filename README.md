@@ -2,6 +2,8 @@
 
 The XYTER test suite is written entirely in Python, and depends on ROOT.
 
+![ENC Test board](front-test-board.jp2)
+
 ## Quick Start
 
 1. open a new session on the PC: ag-ob-strasse (this will automatically source _/home/ststest/cbmsoft/ipbuslogin.sh_)
