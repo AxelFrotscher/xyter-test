@@ -346,7 +346,7 @@ rdch = 63
 test_thr = 129
 
 much_modifier = 0       # Set 1 for MUCH mode, 0 for STS mode
-loop_max = 100          # Pulses per Charge
+loop_max = 500          # Pulses per Charge
 
 ch_min = 0              # Minimum channel of XYTER
 ch_max = 128            # Maximum channel of XYTER
@@ -357,7 +357,7 @@ d_max = 32              # Maximum discriminator (lowest threshold)
 
 ivp = 0
 vp_min = 38             # Minimum charge injected
-vp_max = 80             # Maximum charge injected
+vp_max = 80+30          # Maximum charge injected
 vp_step = 1             # Charge steps
 
 grp_min = 0

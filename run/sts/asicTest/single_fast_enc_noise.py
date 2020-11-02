@@ -321,7 +321,7 @@ rdch = 63
 test_thr = 129
 
 much_modifier = 0       # Set 1 for MUCH mode, 0 for STS mode
-loop_max = 100          # Pulses per Charge
+loop_max = 200          # Pulses per Charge
 
 ch_min = 0              # Minimum channel of XYTER
 ch_max = 128            # Maximum channel of XYTER
