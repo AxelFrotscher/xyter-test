@@ -1,6 +1,4 @@
 #!/usr/bin/python
-from PyQt4 import QtCore, QtGui
-import pyqtgraph as pg
 import random
 import numpy as np
 import matplotlib.pyplot as plt
@@ -18,9 +16,6 @@ import global_dev_ctrl as gdc
 import flim_dev_ctrl as fdc
 import sts_xyter_dev_ctrl as sxdc
 import sts_xyter_settings as settings
-
-#import usbtmc
-#instr =  usbtmc.Instrument(1689, 1034)
 
 #Below we set active links
 # 1 - link is working
@@ -95,7 +90,7 @@ lmask |= (lmask << 5)
 sts.emg_write(192,25,lmask)
 confirm = False
 print "Link Mask" + bin(lmask)
-app = QtGui.QApplication(sys.argv)
+#app = QtGui.QApplication(sys.argv)
 
 vref_n = 22      # Vref_N   AGH:  31    Test:  22
 vref_p = 58      # Vref_P   AGH:  48    Test:  51

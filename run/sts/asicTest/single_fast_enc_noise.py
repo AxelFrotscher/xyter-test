@@ -11,13 +11,8 @@ import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import matplotlib.ticker as ticker
-#from drawnow import *
-import pyqtgraph as pg
 import math
-from PyQt4 import QtCore, QtGui,uic
-import pyqtgraph as pg
 import random
-import numpy as np
 
 import logging
 sys.path.append("../../../lib")
@@ -27,9 +22,7 @@ import sts_xyter_dev_ctrl as sxdc
 
 import sts_xyter_settings as settings
 from os import path
-#import usbtmc
 import time
-#instr =  usbtmc.Instrument(1689, 1034)
 
 #Below we set active links
 # 1 - link is working
