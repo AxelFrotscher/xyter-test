@@ -105,10 +105,10 @@ Doing FULL eLink synchronisation
 [INFO] 26 [True, True, True, True, True]
 [DEBUG] 27 [True, True, True, True, True]
 [INFO] 27 [True, True, True, True, True]
-[DEBUG] 28 [False, True, True, True, True]
-[INFO] 28 [False, True, True, True, True]
-[DEBUG] 29 [False, True, True, True, True]
-[INFO] 29 [False, True, True, True, True]
+[DEBUG] 28 [True, True, True, True, True]
+[INFO] 28 [True, True, True, True, True]
+[DEBUG] 29 [True, True, True, True, True]
+[INFO] 29 [True, True, True, True, True]
 [DEBUG] 30 [False, True, True, True, True]
 [INFO] 30 [False, True, True, True, True]
 [DEBUG] 31 [True, True, True, True, True]
@@ -225,9 +225,9 @@ Doing FULL eLink synchronisation
 [INFO] 86 [True, True, True, True, True]
 [DEBUG] 87 [True, True, True, True, True]
 [INFO] 87 [True, True, True, True, True]
-[INFO] Clock delay = 73
+[INFO] Clock delay = 74
 [INFO] Eye window of the clock signal:
-[INFO] |____________________________XXX_________________________________________________________|
+[INFO] |______________________________X_________________________________________________________|
 [DEBUG] 0 [True, False, False, False, False]
 [DEBUG] 1 [True, False, False, False, False]
 [DEBUG] 2 [True, False, False, False, False]
@@ -255,20 +255,20 @@ Doing FULL eLink synchronisation
 [DEBUG] 24 [False, False, False, False, False]
 [DEBUG] 25 [False, False, False, False, False]
 [DEBUG] 26 [False, False, False, False, False]
-[DEBUG] 27 [False, False, False, False, False]
-[DEBUG] 28 [False, False, False, False, False]
+[DEBUG] 27 [True, False, False, False, False]
+[DEBUG] 28 [True, False, False, False, False]
 [DEBUG] 29 [True, False, False, False, False]
 [DEBUG] 30 [True, False, False, False, False]
 [DEBUG] 31 [True, False, False, False, False]
-[DEBUG] 32 [False, False, False, False, False]
+[DEBUG] 32 [True, False, False, False, False]
 [DEBUG] 33 [False, False, False, False, False]
 [DEBUG] 34 [False, False, False, False, False]
 [DEBUG] 35 [False, False, False, False, False]
 [DEBUG] 36 [False, False, False, False, False]
 [DEBUG] 37 [False, False, False, False, False]
 [DEBUG] 38 [False, False, False, False, False]
-[DEBUG] 39 [False, False, False, False, False]
-[DEBUG] 40 [False, False, False, False, False]
+[DEBUG] 39 [True, False, False, False, False]
+[DEBUG] 40 [True, False, False, False, False]
 [DEBUG] 41 [True, False, False, False, False]
 [DEBUG] 42 [True, False, False, False, False]
 [DEBUG] 43 [True, False, False, False, False]
@@ -292,10 +292,10 @@ Doing FULL eLink synchronisation
 [DEBUG] 61 [True, False, False, False, False]
 [DEBUG] 62 [True, False, False, False, False]
 [DEBUG] 63 [True, False, False, False, False]
-[DEBUG] 0 62
-[INFO] Data delays = [62, 2, 3, 4, 5]
+[DEBUG] 0 61
+[INFO] Data delays = [61, 2, 3, 4, 5]
 [INFO] Eye window of the data signals:
-[INFO] |____________________XXXXXXXXX___XXXXXXXXX_______________________|
+[INFO] |____________________XXXXXXX______XXXXXX_________________________|
 [INFO] |XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX|
 [INFO] |XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX|
 [INFO] |XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX|
