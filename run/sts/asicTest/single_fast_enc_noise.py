@@ -324,8 +324,8 @@ d_min = 0               # Minimum discriminator (highest threshold)
 d_max = 32              # Maximum discriminator (lowest threshold)
 
 ivp = 0
-vp_min = 35             # Minimum charge injected
-vp_max = 86+24          # Maximum charge injected
+vp_min = 35+5           # Minimum charge injected
+vp_max = 86+4           # Maximum charge injected
 vp_step = 1             # Charge steps
 
 grp_min = 0

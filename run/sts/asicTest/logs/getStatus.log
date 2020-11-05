@@ -12,17 +12,17 @@ AFCK ID:  0x6166
 [INFO] 
 AFCK MAC: fc:00:00:00:61:66
 [DEBUG] Return val = 0x00a3c00d
-[DEBUG] Return val = 0x00a0a190
+[DEBUG] Return val = 0x00a02294
 [DEBUG] Return val = 0x00a0001f
 [DEBUG] Return val = 0x00a00025
-[DEBUG] Return val = 0x00a3ffef
+[DEBUG] Return val = 0x00a0002e
 [DEBUG] Return val = 0x00a00033
 [DEBUG] Return val = 0x00a00038
 [DEBUG] Return val = 0x00a00047
 [DEBUG] Return val = 0x00a0f78c
 [DEBUG] Return val = 0x00a001d2
 [DEBUG] Return val = 0x00a0001f
-[DEBUG] Return val = 0x00a733a1
+[DEBUG] Return val = 0x00a7e727
 [DEBUG] Return val = 0x00a6b02b
 [DEBUG] Return val = 0x00a3e670
 [DEBUG] Change slot to have a full pair for write command
