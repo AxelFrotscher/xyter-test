@@ -12,8 +12,8 @@ AFCK ID:  0x6166
 [INFO] 
 AFCK MAC: fc:00:00:00:61:66
 [INFO] Start to configure AFCK
-[INFO] Clock delay = 73
-[INFO] Data delays = [0, 2, 3, 4, 5]
+[INFO] Clock delay = 72
+[INFO] Data delays = [63, 2, 3, 4, 5]
 [DEBUG] eos test result: [True, True, True, True, True]
 [DEBUG] Change slot to have a full pair for write command
 [DEBUG] Write wraddr ACK: 0x008ae80d when writing r  0 c61 val 0x  76

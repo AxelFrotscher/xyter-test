@@ -101,8 +101,8 @@ Doing FULL eLink synchronisation
 [INFO] 24 [True, True, True, True, True]
 [DEBUG] 25 [True, True, True, True, True]
 [INFO] 25 [True, True, True, True, True]
-[DEBUG] 26 [False, True, True, True, True]
-[INFO] 26 [False, True, True, True, True]
+[DEBUG] 26 [True, True, True, True, True]
+[INFO] 26 [True, True, True, True, True]
 [DEBUG] 27 [False, True, True, True, True]
 [INFO] 27 [False, True, True, True, True]
 [DEBUG] 28 [False, True, True, True, True]
@@ -113,8 +113,8 @@ Doing FULL eLink synchronisation
 [INFO] 30 [False, True, True, True, True]
 [DEBUG] 31 [True, True, True, True, True]
 [INFO] 31 [True, True, True, True, True]
-[DEBUG] 32 [False, True, True, True, True]
-[INFO] 32 [False, True, True, True, True]
+[DEBUG] 32 [True, True, True, True, True]
+[INFO] 32 [True, True, True, True, True]
 [DEBUG] 33 [True, True, True, True, True]
 [INFO] 33 [True, True, True, True, True]
 [DEBUG] 34 [True, True, True, True, True]
@@ -225,9 +225,9 @@ Doing FULL eLink synchronisation
 [INFO] 86 [True, True, True, True, True]
 [DEBUG] 87 [True, True, True, True, True]
 [INFO] 87 [True, True, True, True, True]
-[INFO] Clock delay = 73
+[INFO] Clock delay = 72
 [INFO] Eye window of the clock signal:
-[INFO] |__________________________XXXXX_X_______________________________________________________|
+[INFO] |___________________________XXXX_________________________________________________________|
 [DEBUG] 0 [True, False, False, False, False]
 [DEBUG] 1 [True, False, False, False, False]
 [DEBUG] 2 [True, False, False, False, False]
@@ -248,31 +248,31 @@ Doing FULL eLink synchronisation
 [DEBUG] 17 [True, False, False, False, False]
 [DEBUG] 18 [True, False, False, False, False]
 [DEBUG] 19 [True, False, False, False, False]
-[DEBUG] 20 [False, False, False, False, False]
-[DEBUG] 21 [False, False, False, False, False]
-[DEBUG] 22 [False, False, False, False, False]
+[DEBUG] 20 [True, False, False, False, False]
+[DEBUG] 21 [True, False, False, False, False]
+[DEBUG] 22 [True, False, False, False, False]
 [DEBUG] 23 [False, False, False, False, False]
 [DEBUG] 24 [False, False, False, False, False]
 [DEBUG] 25 [False, False, False, False, False]
 [DEBUG] 26 [False, False, False, False, False]
 [DEBUG] 27 [False, False, False, False, False]
 [DEBUG] 28 [False, False, False, False, False]
-[DEBUG] 29 [False, False, False, False, False]
-[DEBUG] 30 [False, False, False, False, False]
-[DEBUG] 31 [False, False, False, False, False]
-[DEBUG] 32 [False, False, False, False, False]
-[DEBUG] 33 [False, False, False, False, False]
-[DEBUG] 34 [False, False, False, False, False]
+[DEBUG] 29 [True, False, False, False, False]
+[DEBUG] 30 [True, False, False, False, False]
+[DEBUG] 31 [True, False, False, False, False]
+[DEBUG] 32 [True, False, False, False, False]
+[DEBUG] 33 [True, False, False, False, False]
+[DEBUG] 34 [True, False, False, False, False]
 [DEBUG] 35 [False, False, False, False, False]
 [DEBUG] 36 [False, False, False, False, False]
 [DEBUG] 37 [False, False, False, False, False]
 [DEBUG] 38 [False, False, False, False, False]
 [DEBUG] 39 [False, False, False, False, False]
 [DEBUG] 40 [False, False, False, False, False]
-[DEBUG] 41 [False, False, False, False, False]
-[DEBUG] 42 [False, False, False, False, False]
-[DEBUG] 43 [False, False, False, False, False]
-[DEBUG] 44 [False, False, False, False, False]
+[DEBUG] 41 [True, False, False, False, False]
+[DEBUG] 42 [True, False, False, False, False]
+[DEBUG] 43 [True, False, False, False, False]
+[DEBUG] 44 [True, False, False, False, False]
 [DEBUG] 45 [True, False, False, False, False]
 [DEBUG] 46 [True, False, False, False, False]
 [DEBUG] 47 [True, False, False, False, False]
@@ -292,10 +292,10 @@ Doing FULL eLink synchronisation
 [DEBUG] 61 [True, False, False, False, False]
 [DEBUG] 62 [True, False, False, False, False]
 [DEBUG] 63 [True, False, False, False, False]
-[DEBUG] 0 0
-[INFO] Data delays = [0, 2, 3, 4, 5]
+[DEBUG] 0 63
+[INFO] Data delays = [63, 2, 3, 4, 5]
 [INFO] Eye window of the data signals:
-[INFO] |____________________XXXXXXXXXXXXXXXXXXXXXXXXX___________________|
+[INFO] |_______________________XXXXXX______XXXXXX_______________________|
 [INFO] |XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX|
 [INFO] |XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX|
 [INFO] |XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX|
