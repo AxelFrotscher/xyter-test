@@ -22,7 +22,7 @@ AFCK MAC: fc:00:00:00:61:66
 [DEBUG] Return val = 0x00a0f78c
 [DEBUG] Return val = 0x00a001d2
 [DEBUG] Return val = 0x00a0001f
-[DEBUG] Return val = 0x00a210a0
+[DEBUG] Return val = 0x00a17ea2
 [DEBUG] Return val = 0x00a6b02b
 [DEBUG] Return val = 0x00a3e670
 [DEBUG] Change slot to have a full pair for write command
