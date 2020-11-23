@@ -12,9 +12,9 @@ AFCK ID:  0x6166
 [INFO] 
 AFCK MAC: fc:00:00:00:61:66
 [DEBUG] Return val = 0x00a3c00d
-[DEBUG] Return val = 0x00a02294
+[DEBUG] Return val = 0x00a060d4
 [DEBUG] Return val = 0x00a0001f
-[DEBUG] Return val = 0x00a00025
+[DEBUG] Return val = 0x00a3ffe4
 [DEBUG] Return val = 0x00a0002e
 [DEBUG] Return val = 0x00a00033
 [DEBUG] Return val = 0x00a00038
@@ -22,9 +22,9 @@ AFCK MAC: fc:00:00:00:61:66
 [DEBUG] Return val = 0x00a0f78c
 [DEBUG] Return val = 0x00a001d2
 [DEBUG] Return val = 0x00a0001f
-[DEBUG] Return val = 0x00a17ea2
+[DEBUG] Return val = 0x00a338a7
 [DEBUG] Return val = 0x00a6b02b
-[DEBUG] Return val = 0x00a3e670
+[DEBUG] Return val = 0x00a3e2b7
 [DEBUG] Change slot to have a full pair for write command
 [DEBUG] Write wraddr ACK: 0x008fe009 when writing r192 c27 val 0x   0
 [DEBUG] ACK fields: seqIn 1, seqOut 15 CP 1 Status 8 TS_MSB 0 CRC 9

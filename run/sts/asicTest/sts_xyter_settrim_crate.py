@@ -144,12 +144,12 @@ for edpb_idx in range( 0, len(hw) ):
                      "trim_cal_200714_gsi_feb_c_89_fast_22_adc_582218430_250.0_"\
                      "holes.txt"
 
-     # Holes from trim_sts.py for vacuum feb-c with Si-Junction STS mode, biased
-     filename_trim_sb= "trim_cal/"\
-                     "trim_cal_200721_gsi_feb_c_89_fast_15_adc_522217915_255.0_"\
+     # Holes from trim_sts.py for vacuum feb-c, 241Am test 
+     filename_trim_am= "trim_cal/"\
+                     "trim_cal_201120_gsi_feb_c_89_fast_32_adc_584618535_66.0_"\
                      "holes.txt"
      #Decide which calibration to load
-     filename_trim = filename_trim_g
+     filename_trim = filename_trim_am
 
      assert path.exists(filename_trim)
 

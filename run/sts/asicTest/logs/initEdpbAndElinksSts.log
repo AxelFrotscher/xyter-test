@@ -103,14 +103,14 @@ Doing FULL eLink synchronisation
 [INFO] 25 [True, True, True, True, True]
 [DEBUG] 26 [True, True, True, True, True]
 [INFO] 26 [True, True, True, True, True]
-[DEBUG] 27 [True, True, True, True, True]
-[INFO] 27 [True, True, True, True, True]
+[DEBUG] 27 [False, True, True, True, True]
+[INFO] 27 [False, True, True, True, True]
 [DEBUG] 28 [False, True, True, True, True]
 [INFO] 28 [False, True, True, True, True]
 [DEBUG] 29 [False, True, True, True, True]
 [INFO] 29 [False, True, True, True, True]
-[DEBUG] 30 [True, True, True, True, True]
-[INFO] 30 [True, True, True, True, True]
+[DEBUG] 30 [False, True, True, True, True]
+[INFO] 30 [False, True, True, True, True]
 [DEBUG] 31 [True, True, True, True, True]
 [INFO] 31 [True, True, True, True, True]
 [DEBUG] 32 [True, True, True, True, True]
@@ -227,7 +227,7 @@ Doing FULL eLink synchronisation
 [INFO] 87 [True, True, True, True, True]
 [INFO] Clock delay = 72
 [INFO] Eye window of the clock signal:
-[INFO] |____________________________XX__________________________________________________________|
+[INFO] |___________________________XXXX_________________________________________________________|
 [DEBUG] 0 [True, False, False, False, False]
 [DEBUG] 1 [True, False, False, False, False]
 [DEBUG] 2 [True, False, False, False, False]
@@ -249,21 +249,21 @@ Doing FULL eLink synchronisation
 [DEBUG] 18 [True, False, False, False, False]
 [DEBUG] 19 [True, False, False, False, False]
 [DEBUG] 20 [True, False, False, False, False]
-[DEBUG] 21 [False, False, False, False, False]
-[DEBUG] 22 [False, False, False, False, False]
-[DEBUG] 23 [False, False, False, False, False]
+[DEBUG] 21 [True, False, False, False, False]
+[DEBUG] 22 [True, False, False, False, False]
+[DEBUG] 23 [True, False, False, False, False]
 [DEBUG] 24 [False, False, False, False, False]
 [DEBUG] 25 [False, False, False, False, False]
 [DEBUG] 26 [False, False, False, False, False]
 [DEBUG] 27 [False, False, False, False, False]
 [DEBUG] 28 [False, False, False, False, False]
 [DEBUG] 29 [False, False, False, False, False]
-[DEBUG] 30 [True, False, False, False, False]
+[DEBUG] 30 [False, False, False, False, False]
 [DEBUG] 31 [True, False, False, False, False]
 [DEBUG] 32 [True, False, False, False, False]
-[DEBUG] 33 [False, False, False, False, False]
-[DEBUG] 34 [False, False, False, False, False]
-[DEBUG] 35 [False, False, False, False, False]
+[DEBUG] 33 [True, False, False, False, False]
+[DEBUG] 34 [True, False, False, False, False]
+[DEBUG] 35 [True, False, False, False, False]
 [DEBUG] 36 [False, False, False, False, False]
 [DEBUG] 37 [False, False, False, False, False]
 [DEBUG] 38 [False, False, False, False, False]
@@ -292,10 +292,10 @@ Doing FULL eLink synchronisation
 [DEBUG] 61 [True, False, False, False, False]
 [DEBUG] 62 [True, False, False, False, False]
 [DEBUG] 63 [True, False, False, False, False]
-[DEBUG] 0 63
-[INFO] Data delays = [63, 2, 3, 4, 5]
+[DEBUG] 0 0
+[INFO] Data delays = [0, 2, 3, 4, 5]
 [INFO] Eye window of the data signals:
-[INFO] |_____________________XXXXXXXXX___XXXXXXXXX______________________|
+[INFO] |________________________XXXXXXX_____XXXXXX______________________|
 [INFO] |XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX|
 [INFO] |XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX|
 [INFO] |XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX|
@@ -305,10 +305,10 @@ Doing FULL eLink synchronisation
 [INFO] 
 STS eLink synchronisation completed
 [INFO] Stopping readout & STSXYTER pattern generator
-[DEBUG] Write wraddr ACK: 0x0089a00c when writing r192 c18 val 0x   0
-[DEBUG] ACK fields: seqIn 5, seqOut 3 CP 0 Status 8 TS_MSB 0 CRC c
-[DEBUG] Write wrdata ACK: 0x008a200b when writing r192 c18 val 0x   0
-[DEBUG] ACK fields: seqIn 5, seqOut 4 CP 0 Status 8 TS_MSB 0 CRC b
+[DEBUG] Write wraddr ACK: 0x0089a40b when writing r192 c18 val 0x   0
+[DEBUG] ACK fields: seqIn 5, seqOut 3 CP 0 Status 9 TS_MSB 0 CRC b
+[DEBUG] Write wrdata ACK: 0x008a240c when writing r192 c18 val 0x   0
+[DEBUG] ACK fields: seqIn 5, seqOut 4 CP 0 Status 9 TS_MSB 0 CRC c
 [INFO] start to initialize AFCK Microslice threshold
 [INFO] Setup sts-xyter datapath
 [DEBUG] Reset all FIFOs

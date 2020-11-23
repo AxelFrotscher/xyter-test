@@ -265,7 +265,7 @@ def get_trim_adc(sts, pol_val):
     print float(vpset[d]),
 
   d_counter = 0
-  print_channel = 62
+  print_channel = 53
   # Loop over discriminators
   for d in range (d_min, d_max):
     disc = 61 - 2 * d
@@ -478,7 +478,7 @@ def get_trim_fast(sts, pol_val):
       for ch in range (grp, ch_max, 4):
         #print "ch: ", '{:3d}'.format(ch),
         cnt[ch][thr_i] = sts.read(ch, 62) & 0xfff
-        if(ch == 45):
+        if(ch == 53):
           print "Ch {0} trim {1} cts {2} snt {3}"\
                  .format(ch, thr_i,cnt[ch][thr_i], npulses)
         #print '{:3d}'.format(cnt[ch][thr_i])
@@ -629,8 +629,8 @@ tr_fine_step = 1
 
 # .......................  ADC  Reference Voltages ...........................
 
-vref_p_h = 63     # Ref. voltages Positive  (130, 9) (48)
-vref_n_h = 22     # Ref. voltages Negative  (130, 8) (30)
+vref_p_h = 58     # Ref. voltages Positive  (130, 9) (48)
+vref_n_h = 46     # Ref. voltages Negative  (130, 8) (30)
 
 vref_p_e = 52     # Ref. voltages Positive  (130, 9) (48)
 vref_n_e = 22     # Ref. voltages Negative  (130, 8) (30)
@@ -643,7 +643,7 @@ thr_max = 64
 thr_step = 1
 # ......................  FAST  Reference Voltages ............................
 
-thr2_glb = 12
+thr2_glb = 20+12
 
 # .......................... CSA reference current ..........................
 csa_in = 31
@@ -652,8 +652,8 @@ csa_in = 31
 much_modifier = 0
 #amp_cal_min = 40  # (130,4, amp_cal)
 #amp_cal_min = 15   # Test Axel for proper noise measurement
-amp_cal_min = 10    # Test Axel for Si-Detector
-amp_cal_max = 255.
+amp_cal_min = 35    # Test Axel for Si-Detector
+amp_cal_max = 66.
 
 loop_max = 30
 
