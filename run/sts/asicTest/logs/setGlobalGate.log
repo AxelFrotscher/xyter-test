@@ -11,7 +11,7 @@
 AFCK ID:  0x6166
 [INFO] 
 AFCK MAC: fc:00:00:00:61:66
-[DEBUG] Write wraddr ACK: 0x0088ec0e when writing r130 c11 val 0x   0
-[DEBUG] ACK fields: seqIn 3, seqOut 1 CP 1 Status b TS_MSB 0 CRC e
-[DEBUG] Write wrdata ACK: 0x00896c0d when writing r130 c11 val 0x   0
-[DEBUG] ACK fields: seqIn 3, seqOut 2 CP 1 Status b TS_MSB 0 CRC d
+[DEBUG] Write wraddr ACK: 0x0088e809 when writing r130 c11 val 0x   0
+[DEBUG] ACK fields: seqIn 3, seqOut 1 CP 1 Status a TS_MSB 0 CRC 9
+[DEBUG] Write wrdata ACK: 0x0089680a when writing r130 c11 val 0x   0
+[DEBUG] ACK fields: seqIn 3, seqOut 2 CP 1 Status a TS_MSB 0 CRC a

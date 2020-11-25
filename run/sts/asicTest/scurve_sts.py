@@ -92,19 +92,19 @@ confirm = False
 print "Link Mask" + bin(lmask)
 #app = QtGui.QApplication(sys.argv)
 
-vref_n = 22      # Vref_N   AGH:  31    Test:  22
-vref_p = 58      # Vref_P   AGH:  48    Test:  51
-vref_t = 128 + vref_p - 2
+vref_n = 42      # Vref_N   AGH:  31    Test:  22
+vref_p = 54      # Vref_P   AGH:  48    Test:  51
+vref_t = 128 + vref_p - 1
 #vref_t_r = 176  # Vref_T   AGH: 188    Test: 184         bit7: enable   5..0:
 
 testch = int(sys.argv[3])       # Channel to be tested
-thr2_glb = 22                   # TDC Threshold
+thr2_glb = 39                   # TDC Threshold
 
 d_min = 0                       # Minimum and maximum discriminator
 d_max = 32
 
-ch_min = 0                      # Minimum and maximum charge injected
-ch_max = 255
+ch_min = 0+20                   # Minimum and maximum charge injected
+ch_max = 255-175
 #ch_max = ch_min+5
 
 test_delta_ch = 1               # Charge Step size for scanning response
@@ -115,7 +115,7 @@ grp_max = 4
 much_strength = 0               # Input range from STS (0) or MUCH (1)
 
 csa_in = 31
-test_npulse = 2 * 80            # Number of Pulses per charge step
+test_npulse = 300               # Number of Pulses per charge step
 
 vp_cnt = [0 for d in range(ch_min,ch_max, test_delta_ch)]
 cnt = [[0 for c in range(ch_min, ch_max, test_delta_ch)] for d in range(d_min,d_max)]

@@ -149,7 +149,7 @@ for edpb_idx in range( 0, len(hw) ):
                      "trim_cal_201120_gsi_feb_c_89_fast_32_adc_584618535_66.0_"\
                      "holes.txt"
      #Decide which calibration to load
-     filename_trim = filename_trim_am
+     filename_trim = filename_trim_g
 
      assert path.exists(filename_trim)
 

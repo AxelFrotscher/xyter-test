@@ -349,16 +349,16 @@ d_min = 0               # Minimum discriminator (highest threshold)
 d_max = 32              # Maximum discriminator (lowest threshold)
 
 ivp = 0
-vp_min = 38             # Minimum charge injected
-vp_max = 90+1           # Maximum charge injected
+vp_min = 38-13          # Minimum charge injected
+vp_max = 90-40          # Maximum charge injected
 vp_step = 1             # Charge steps
 
 grp_min = 0
 grp_max = 4
 
 # --------------------------- ADC settings --------------------------------------------
-vref_n = 22    # Vref_N   AGH:  31    Test:  22
-vref_p = 52    # Vref_P   AGH:  48    Test:  51
+vref_n = 46    # Vref_N   AGH:  31    Test:  22
+vref_p = 58    # Vref_P   AGH:  48    Test:  51
 vref_t = 128 + vref_p -1  # Vref_T  18 AGH: 188    Test: 184         bit7: enable   5..0: threshold
 #vref_t_r = 128 + vref_t -1
 # -------------------------------------------------------------------------------------
